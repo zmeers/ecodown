@@ -92,7 +92,7 @@ reference_to_list_index <- function(pkg) {
     })
   
   if(!is.null(pkg_ref)) {
-    sections_title <- map(pkg_ref, ~ c(.x$title, .x$subtitle))
+    sections_title <- map(pkg_ref, ~c(.x$title, .x$subtitle))
     names(sections_list) <- sections_title
   }
   

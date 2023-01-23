@@ -90,7 +90,7 @@ are \code{qmd} and \code{md}. Defaults to \code{qmd}.}
 of additions to the reference front matter. It applies only to when reference
 output is \code{qmd}}
 
-\item{reference_template}{The path to a \code{.qmd} file to use as the template to
+\item{reference_template}{The path to a \code{.qmd} or \code{.md} file to use as the template to
 create the reference pages.}
 
 \item{package_description}{Custom description for the package. If NULL then

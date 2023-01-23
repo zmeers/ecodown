@@ -1,0 +1,47 @@
+---
+title: "Set up function for uploading graphs to canva.cn"
+---
+
+*R/canva_upload.R*
+
+## canva_cn_upload
+
+## Description
+ Set up function for uploading graphs to canva.cn 
+
+
+## Usage
+```r
+ 
+canva_cn_upload( 
+  plot_object, 
+  plot_width, 
+  plot_height, 
+  plot_units, 
+  plot_title, 
+  file_name = NULL, 
+  file_format, 
+  transparent_bg, 
+  canva_cn_secret_key = Sys.getenv("CANVIZ_CN_SECRET_KEY") 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| plot_object | Plot object |
+| plot_width | Plot width |
+| plot_height | Plot height |
+| plot_units | Plot units - 'mm', 'cm', 'in', 'px' |
+| plot_title | Plot title and image title in Canva uploads |
+| file_name | Save graph to specified file name - this is only needed if you want to write over copies of the same graph. |
+| file_format | Saved file format - "html", "png", "svg", "jpeg" |
+| transparent_bg | Save with a transparent background. Boolean (True/False). |
+| canva_cn_secret_key | API key - grab from the canviz content app on canva.cn |
+
+
+
+
+
+
+

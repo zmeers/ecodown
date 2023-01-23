@@ -1,0 +1,53 @@
+---
+title: "Bind connections globe data"
+---
+
+*R/bindings.R*
+
+## bind_connections_globe_data
+
+## Description
+ Bind connections globe data 
+
+
+## Usage
+```r
+ 
+bind_connections_globe_data( 
+  ., 
+  connections_data = NULL, 
+  connections_source = NULL, 
+  connections_destination = NULL, 
+  connections_value = NULL, 
+  connections_filter = NULL, 
+  locations_data = NULL, 
+  locations_code = NULL, 
+  locations_name = NULL, 
+  locations_latitude = NULL, 
+  locations_longitude = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| connections_data | A data frame with connections between source and destination. |
+| connections_source | The column containing the code for the arrow's source |
+| connections_destination | The column containing the code for the arrow's destination |
+| connections_value | The column containing the value of interest - this specifies the thickness of the arrow |
+| connections_filter | Creates a menu or slider based on the values in a column |
+| locations_data | A data frame with information about the locations which must match that in the `connections_data` dataset |
+| locations_code | The column containing the location code, as specified in the Source and Destination columns of the connections sheet |
+| locations_name | The column containing the location name |
+| locations_latitude | The column containing the latitude of the location |
+| locations_longitude | The column containing the longitude of the location |
+
+
+
+
+
+
+## See Also
+ Other Flourish map:  `bind_arc_map_data()`, `bind_choropleth_map_data()`, `bind_region_marker_map_data()`, `bind_time_map_data()`, `set_arc_map_details()`, `set_choropleth_map_details()`, `set_connections_globe_details()`, `set_marker_map_details()`, `set_region_map_details()`, `set_time_map_details()` 
+

@@ -1,0 +1,83 @@
+---
+title: "Set Flourish chart footer"
+---
+
+*R/chart.R*
+
+## chart_footer
+
+## Description
+ Set Flourish chart footer 
+
+
+## Usage
+```r
+ 
+chart_footer( 
+  ., 
+  align = NULL, 
+  text_size = NULL, 
+  text_color = NULL, 
+  font = NULL, 
+  font_weight = NULL, 
+  multiple_sources = NULL, 
+  source_name_1 = NULL, 
+  source_url_1 = NULL, 
+  source_name_2 = NULL, 
+  source_url_2 = NULL, 
+  source_name_3 = NULL, 
+  source_url_3 = NULL, 
+  source_label = NULL, 
+  note = NULL, 
+  note_secondary = NULL, 
+  border = NULL, 
+  border_width = NULL, 
+  border_color = NULL, 
+  border_style = NULL, 
+  border_space = NULL, 
+  logo_source = NULL, 
+  logo_source_light = NULL, 
+  logo_height = NULL, 
+  logo_align_vertical = NULL, 
+  logo_align_horizontal = NULL, 
+  logo_margin = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| align | Footer alignment - "left", "center", "right" |
+| text_size | Footer text size |
+| text_color | Footer text color |
+| font | Footer font face |
+| font_weight | Footer font weight - "bold", "normal" |
+| multiple_sources | Boolean (True/False) for multiple sources |
+| source_name_1 | Footer source name 1 |
+| source_url_1 | Footer source URL 1 |
+| source_name_2 | Footer source name 1 |
+| source_url_2 | Footer source URL 2 |
+| source_name_3 | Footer source name 2 |
+| source_url_3 | Footer source URL 3 |
+| source_label | Footer source label |
+| note | Footer note |
+| note_secondary | Footer secondary note |
+| border | Border - "top", "bottom", "none |
+| border_width | Border width |
+| border_color | Border color |
+| border_style | Border style - "solid", "dashed", "dotted" |
+| border_space | Space between border and footer text |
+| logo_source | URL source |
+| logo_source_light | URL source to use with a dark background (light logo) |
+| logo_height | Logo height |
+| logo_align_vertical | Footer alignment - "flex-start", "center", "flex-end" |
+| logo_align_horizontal | Footer alignment - "left", "right" |
+| logo_margin | Logo margin |
+
+
+
+
+
+
+

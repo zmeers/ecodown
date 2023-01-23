@@ -1,0 +1,109 @@
+---
+title: "Set sports field details"
+---
+
+*R/details.R*
+
+## set_sports_field_details
+
+## Description
+ Set sports field details 
+
+
+## Usage
+```r
+ 
+set_sports_field_details( 
+  ., 
+  player_positions_type = NULL, 
+  player_positions_reverse = NULL, 
+  player_positions_scale_custom = NULL, 
+  player_positions_x_minimum = NULL, 
+  player_positions_x_maximum = NULL, 
+  player_positions_y_minimum = NULL, 
+  player_positions_y_maximum = NULL, 
+  player_formation_type = NULL, 
+  player_formation = NULL, 
+  player_formation_custom = NULL, 
+  pitch_background_color = NULL, 
+  pitch_offset = NULL, 
+  pitch_margin_top = NULL, 
+  pitch_margin_bottom = NULL, 
+  pitch_type = NULL, 
+  pitch_line_color = NULL, 
+  pitch_line_width = NULL, 
+  pitch_type_svg = NULL, 
+  pitch_type_upload = NULL, 
+  pitch_rotation_x = NULL, 
+  pitch_rotation_z = NULL, 
+  pitch_shadow = NULL, 
+  label_size = NULL, 
+  label_color = NULL, 
+  label_weight = NULL, 
+  label_offset = NULL, 
+  dot_size = NULL, 
+  colors_team_single = NULL, 
+  dot_opacity = NULL, 
+  dot_border = NULL, 
+  colors_category_single = NULL, 
+  image_contrast = NULL, 
+  image_brightness = NULL, 
+  image_saturation = NULL, 
+  image_blend_mode = NULL, 
+  animation_target = NULL, 
+  animation_duration = NULL, 
+  aspect_ratio = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| player_positions_type | Players position. Position players based on a specific formation, or use x and y coordinates for players if you have the data. Allowed values:"formation" (default formations), "data" (positions from data) |
+| player_positions_reverse | Boolean. Start formation. |
+| player_positions_scale_custom | Boolean. Position scale. |
+| player_positions_x_minimum | X min. |
+| player_positions_x_maximum | X max. |
+| player_positions_y_minimum | Y min. |
+| player_positions_y_maximum | Y max. |
+| player_formation_type | Formation type. Allowed values: "preset", "custom" |
+| player_formation | Player formation. Allowed values: "--**-- ----- -****list("- ", list("---"), " ----- -")****-**- --**-- ----- -**-**-" (1-3-5-2), "--**-- ----- ----- ----- ----- **** ----- ----- ----- ----- -**--**--**- ----- ----- ----- -**-**- ----- -**-" (1-4-3-3),"--**-- -**-**- ****list("---")**** --**-- -**-**- **---** --*--" (1-4-3-2-1) |
+| player_formation_custom | Custom formation. Use an asterisk for every player and a dash for every space on the pitch |
+| pitch_background_color | Background color. |
+| pitch_offset | Offset. Max: 5 |
+| pitch_margin_top | Top margin |
+| pitch_margin_bottom | Botom margin |
+| pitch_type | Type. Allowed values: "football", "football_half", "basketball" |
+| pitch_line_color | Line color |
+| pitch_line_width | Line width |
+| pitch_type_svg | SVG |
+| pitch_type_upload | Upload URL |
+| pitch_rotation_x | X rotation |
+| pitch_rotation_z | Z rotation |
+| pitch_shadow | Shadow |
+| label_size | Size |
+| label_color | Color |
+| label_weight | Weight. Allowed values: "normal", "bold" |
+| label_offset | Label vertical offset |
+| dot_size | Size as a percentage of pitch width |
+| colors_team_single | Color |
+| dot_opacity | Opacity |
+| dot_border | Border width |
+| colors_category_single | Color |
+| image_contrast | Contrast |
+| image_brightness | Brightness |
+| image_saturation | Saturation |
+| image_blend_mode | Blend mode. Allowed values: "lighten", "darken", "multiply" |
+| animation_target | Animation target. Allowed values: "players", "opacity", "both" |
+| animation_duration | Animation duration |
+| aspect_ratio | Aspect ratio. Min: 0.1 |
+
+
+
+
+
+
+## See Also
+ Other Sports:  `bind_sports_field_data()`, `bind_sports_race_data()`, `set_sports_race_details()` 
+

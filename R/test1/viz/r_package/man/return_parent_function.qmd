@@ -1,0 +1,25 @@
+---
+title: "Return parent function"
+---
+
+*R/canviz_utils.R*
+
+## return_parent_function
+
+## Description
+ Return parent function 
+
+
+## Usage
+```r
+ 
+return_parent_function() 
+```
+
+
+
+
+
+
+
+

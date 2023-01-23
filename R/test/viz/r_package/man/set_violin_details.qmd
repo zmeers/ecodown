@@ -1,0 +1,93 @@
+---
+title: "Set up violin plot details"
+---
+
+*R/details.R*
+
+## set_violin_details
+
+## Description
+ Set up violin plot details 
+
+
+## Usage
+```r
+ 
+set_violin_details( 
+  ., 
+  bandwidth = NULL, 
+  samples = NULL, 
+  color = NULL, 
+  opacity = NULL, 
+  sizing = NULL, 
+  default_color = NULL, 
+  fill_opacity = NULL, 
+  default_shape = NULL, 
+  data_point_default_size = NULL, 
+  data_point_min_size = NULL, 
+  data_point_max_size = NULL, 
+  responsive_dots = NULL, 
+  stroke_opacity = NULL, 
+  stroke_width = NULL, 
+  stroke_mode = NULL, 
+  stroke_color = NULL, 
+  render_mode = NULL, 
+  color_type = NULL, 
+  spectrum = NULL, 
+  labels_show = NULL, 
+  labels_selective = NULL, 
+  label_color_type = NULL, 
+  label_color = NULL, 
+  labels_responsive = NULL, 
+  label_font_size = NULL, 
+  label_font_size_minimum = NULL, 
+  label_font_size_maximum = NULL, 
+  label_bg_size = NULL, 
+  label_align = NULL, 
+  label_offset = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| bandwidth | Box plot color |
+| samples | Box plot opacity. Max: 1. |
+| color | Line color. |
+| opacity | Line width. |
+| sizing | Whisker type. Allowed values:"tukey", "all". |
+| default_color | Default colour. Used when Colour column is unspecified |
+| fill_opacity | Dot opacity. Max: 1 |
+| default_shape | Default shape. Used when Shape column is unspecified or empty. Allowed values: symbolCircle, symbolCross, symbolDiamond, symbolSquare, symbolStar, symbolTriangle, symbolWye |
+| data_point_default_size | Size. In pixel area. Only used when Size column is unspecified or empty. Subject to scaling with the chart size (see seeing below). Min: 1 |
+| data_point_min_size | minimum size. In pixel area. Used when you have a Size column selected. Subject to scaling with the chart size. |
+| data_point_max_size | maximum size. In pixel area. Used when you have a Size column selected. Subject to scaling with the chart size. |
+| responsive_dots | Boolean. Scale dots based on chart size. Makes the dots get bigger or smaller relative to the chart size. Turn off to specify a fixed sizes regardless of chart size. |
+| stroke_opacity | Outline opacity. Max: 1 |
+| stroke_width | Outline width. |
+| stroke_mode | Outline mode. Choose Auto for Outline colour to match Dot colour. Choose Fixed to give all dots a uniform Outline colour. Allowed values: auto, fixed |
+| stroke_color | Outline colour. |
+| render_mode | Renderer. In most cases you should only need SVG, but you may want to choose WebGL if you have a lot of data or you notice your chart is running slowly on your device. Allowed values: svg, webgl |
+| color_type | Data type. Allowed values: auto, number, discrete |
+| spectrum | Palette when shading by a number column. Ignored unless the selected “Colour” column is numerical. These schemes are drawn from D3 and ColorBrewer. |
+| labels_show | Boolean. Show labels on points. Labels only show up if you have designated a “Name” column in the data tab |
+| labels_selective | Boolean. Labels to show. To show labels selectively, turn on this option and then make a story. In the story editor click on dots to hide/show the labels. Allowed values: false (All), true (Selective (story only)) |
+| label_color_type | Label colour. Allowed values: auto (Auto), match (Match dots), fixed (Fixed) |
+| label_color | Fixed. |
+| labels_responsive | Scale label. Choose between no scale, scale by chart size, or try to fit the label in the data point. Allowed values: chart (Chart), data (Data point), none (None) |
+| label_font_size | Font size. |
+| label_font_size_minimum | minimum font size. |
+| label_font_size_maximum | maximum font size. |
+| label_bg_size | Shadow size. As percent of font size |
+| label_align | Alignment. Align the text at start, middle or end of the data point. Allowed values: auto, start, middle, end |
+| label_offset | Offset. Place labels on top of or next to data point. Allowed values: top (On top), next (Next) |
+
+
+
+
+
+
+## See Also
+ Other Flourish line, bar, pie chart and scatterplots:  `bind_data()`, `bind_racing_bar_chart_data()`, `bind_racing_line_chart_data()`, `set_area_details()`, `set_bar_column_details()`, `set_boxplot_details()`, `set_line_details()`, `set_racing_bar_chart_details()`, `set_racing_line_chart_details()`, `set_scatterplot_details()`, `set_segment_details()` 
+

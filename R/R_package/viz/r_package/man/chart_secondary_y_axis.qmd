@@ -1,0 +1,109 @@
+---
+title: "Set secondary Y axis"
+---
+
+*R/chart.R*
+
+## chart_secondary_y_axis
+
+## Description
+ Set secondary Y axis 
+
+
+## Usage
+```r
+ 
+chart_secondary_y_axis( 
+  ., 
+  show = NULL, 
+  position = NULL, 
+  scale_type = NULL, 
+  min = NULL, 
+  max = NULL, 
+  flip = NULL, 
+  scale_settings = NULL, 
+  pretty_format = NULL, 
+  show_zero = NULL, 
+  title = NULL, 
+  title_weight = NULL, 
+  title_color = NULL, 
+  title_size = NULL, 
+  title_padding = NULL, 
+  text_position = NULL, 
+  text_size = NULL, 
+  text_color = NULL, 
+  text_angle = NULL, 
+  text_weight = NULL, 
+  text_max_lines = NULL, 
+  text_line_height = NULL, 
+  text_space_mode = NULL, 
+  text_space = NULL, 
+  tick_padding = NULL, 
+  tick_mode = NULL, 
+  tick_number = NULL, 
+  tick_custom = NULL, 
+  line_tick_color = NULL, 
+  line_tick_width = NULL, 
+  tick_length = NULL, 
+  tick_side = NULL, 
+  line_show = NULL, 
+  edge_padding = NULL, 
+  gridline_show = NULL, 
+  gridline_color = NULL, 
+  gridline_style = NULL, 
+  gridline_width = NULL, 
+  gridline_category_dividers = NULL, 
+  gridline_category_dividers_extend = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| show | Secondary Y axis show or hide. Boolean (True/False). Defaults to False. |
+| position | Secondary Y axis position ("bottom", "float-below" "float-above", "top", "off") |
+| scale_type | Log, linear or date |
+| min | Secondary Y axis minimum value |
+| max | Secondary Y axis maximum value |
+| flip | Flip Secondary Y and X axes |
+| scale_settings | Configure minimum and maximum values |
+| pretty_format | Pretty format secondary Y axis |
+| show_zero | Show zero on the secondary Y axis |
+| title | Secondary Y axis title |
+| title_weight | Secondary Y axis title weight ("bold", "normal") |
+| title_color | Secondary Y axis title color |
+| title_size | Secondary Y axis title size (starts from 0, usually a number between 1 and 3 is a good choice) |
+| title_padding | Secondary Y axis passing |
+| text_position | Secondary Y axis text position ("default", "left", "right") |
+| text_size | Secondary Y axis text size (starts from 0, usually a number between 1 and 3 is a good choice) |
+| text_color | Secondary Y axis text color |
+| text_angle | Secondary Y axis text angle (0, 30, 45, 60, 90) |
+| text_weight | Secondary Y axis text weight ("bold", "normal") |
+| text_max_lines | Maximum number of lines on Secondary Y axis |
+| text_line_height | Secondary Y axis line height |
+| text_space_mode | Secondary Y axis space mode ("auto", "maxed", "fixed") |
+| text_space | Secondary Y axis space |
+| tick_padding | Secondary Y axis tick padding |
+| tick_mode | Secondary Y axis tick mode ("auto", "number", "custom") |
+| tick_number | Approximate number of ticks or gridlines. The actual number will depend on the range of values, chart size, etc. |
+| tick_custom | One tick label per line. Specify the ticks to show, one per line |
+| line_tick_color | Secondary Y axis line color |
+| line_tick_width | Secondary Y axis line width |
+| tick_length | Secondary Y axis tick length |
+| tick_side | Secondary Y axis tick side ("in", "out") |
+| line_show | Secondary Y axis visible |
+| edge_padding | Edge padding (%). Space between start/end of axis line and first/last category tick as a percentage of the spacing between ticks. Max: 100 |
+| gridline_show | Boolean (True/False) |
+| gridline_color | Gridline color |
+| gridline_style | Gridline style ("solid", "dash", "dot", "dot_dash") |
+| gridline_width | Gridline width |
+| gridline_category_dividers | Put lines between categories. On a categorical axis this option disables the gridline on each tick and instead adds rules between each category to give a table-like design. Ignored for date and numeric axes. |
+| gridline_category_dividers_extend | Extend. Extends the dividers into the axis margins. |
+
+
+
+
+
+
+

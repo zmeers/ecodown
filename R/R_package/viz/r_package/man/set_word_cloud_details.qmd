@@ -1,0 +1,59 @@
+---
+title: "Set word cloud details"
+---
+
+*R/details.R*
+
+## set_word_cloud_details
+
+## Description
+ Set word cloud details 
+
+
+## Usage
+```r
+ 
+set_word_cloud_details( 
+  ., 
+  word_limit = NULL, 
+  exclusions = NULL, 
+  excluded_words = NULL, 
+  cloud_font = NULL, 
+  text_color = NULL, 
+  word_padding = NULL, 
+  random_seed = NULL, 
+  angle_minimum = NULL, 
+  angle_maximum = NULL, 
+  angle_number = NULL, 
+  font_size_minimum = NULL, 
+  font_size_maximum = NULL, 
+  size_mode = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| word_limit | Word limit. Limits the number of words, in order of frequency. Leave blank to show all words in the data table. Min: 1 |
+| exclusions | Exclude common words ('the', 'a', etc.). |
+| excluded_words | Exclude words. |
+| cloud_font | Font. |
+| text_color | Text color. |
+| word_padding | Spacing. Spacing between the words (in arbitrary units) |
+| random_seed | Layout number. Change the number to try different word layouts. |
+| angle_minimum | minimum angle. Min: -180. Max: 180. |
+| angle_maximum | maximum angle. Min: -180. Max: 180 |
+| angle_number | Number of angles. Min: 1. Max: 100. |
+| font_size_minimum | minimum size. In arbitrary units. Actual display size will depend in screen size and layout. |
+| font_size_maximum | maximum size. In arbitrary units. Actual display size will depend in screen size and layout. Min: 1 |
+| size_mode | Scaling. This scale will determine the relationship in size between the biggest and the smallest word. Allowed values: linear, sqrt, log |
+
+
+
+
+
+
+## See Also
+ Other Other Flourish graphs:  `bind_card_data()`, `bind_chord_diagram_data()`, `bind_gantt_data()`, `bind_network_data()`, `bind_pictogram_data()`, `bind_radar_data()`, `bind_sankey_data()`, `bind_slope_data()`, `bind_word_cloud_data()`, `set_card_details()`, `set_chord_diagram_details()`, `set_countdown_details()`, `set_gantt_details()`, `set_network_details()`, `set_photo_slider_details()`, `set_pictogram_details()`, `set_radar_details()`, `set_sankey_details()`, `set_slope_details()` 
+

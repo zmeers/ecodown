@@ -1,0 +1,91 @@
+---
+title: "Set Flourish timeline controls"
+---
+
+*R/chart.R*
+
+## chart_timeline_controls
+
+## Description
+ Set Flourish timeline controls 
+
+
+## Usage
+```r
+ 
+chart_timeline_controls( 
+  ., 
+  style = NULL, 
+  play_on_load = NULL, 
+  loop = NULL, 
+  axes_custom_enabled = NULL, 
+  axes_color = NULL, 
+  axes_font_size = NULL, 
+  date_format_display = NULL, 
+  pretty_x_axis = NULL, 
+  pretty_y_axis = NULL, 
+  scrubber_snap = NULL, 
+  scrubber_height = NULL, 
+  margin_top = NULL, 
+  margin_left = NULL, 
+  margin_bottom = NULL, 
+  margin_right = NULL, 
+  playback_button_margin_right = NULL, 
+  playback_button_margin_right_button = NULL, 
+  graph = NULL, 
+  background_color = NULL, 
+  graph_height = NULL, 
+  curve = NULL, 
+  playback_button_color = NULL, 
+  playback_button_size = NULL, 
+  playback_button_icon_color = NULL, 
+  playback_button_icon_size = NULL, 
+  playback_button_label_size = NULL, 
+  duration = NULL, 
+  duration_wait_at_end = NULL, 
+  duration_tween = NULL, 
+  bar_rank_animation_duration = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| style | Style .Allowed values: "timeline" (Timeline), "button" (Playback button) |
+| play_on_load | Play on load. |
+| loop | Loop timeline. When turned on, the timeline will return to the beginning once complete. Otherwise, it will stop when it reaches the end. Boolean (True/False). |
+| axes_custom_enabled | Advanced axes settings. |
+| axes_color | Axes color. |
+| axes_font_size | Font size. Max: 3 |
+| date_format_display | X axis date format. |
+| pretty_x_axis | Clean X axis. Rounds out the X axis so that its start and end values are nice, round numbers |
+| pretty_y_axis | Clean Y axis. Rounds out the Y axis so that its start and end values are nice, round dates |
+| scrubber_snap | Snap when scrubbing. When turned on, you can only jump to values that are supplied in the dataset and nothing in between. Boolean (True/False) |
+| scrubber_height | Scrubber height. |
+| margin_top | Top. |
+| margin_left | Left. |
+| margin_bottom | Bottom. |
+| margin_right | Right. |
+| playback_button_margin_right | Space between button and timeline. |
+| playback_button_margin_right_button | Space between button and text. |
+| graph | Graph visibility. Boolean (True/False). |
+| background_color | Background color |
+| graph_height | Height. |
+| curve | Curved lines. Boolean (True/False). |
+| playback_button_color | Button colour. |
+| playback_button_size | Button size. Max: 8 |
+| playback_button_icon_color | Icon colour. |
+| playback_button_icon_size | Icon size.Max: 8 |
+| playback_button_label_size | Label size. Max: 8 |
+| duration | Timeline duration. Total duration of the timeline during normal playback (in seconds). |
+| duration_wait_at_end | Duration before loop. Amount of time to wait at the end of the timeline before looping (in seconds). |
+| duration_tween | Time jump duration. Duration of transitions between different points in time on the timeline. This is the transition you see in the story player when switching between slides with a different time one the timeline (in seconds). |
+| bar_rank_animation_duration | Bar rank animation duration (s). Animation duration of the bars taking over each other |
+
+
+
+
+
+
+

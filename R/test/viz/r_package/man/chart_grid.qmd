@@ -1,0 +1,95 @@
+---
+title: "Set Flourish grid controls"
+---
+
+*R/chart.R*
+
+## chart_grid
+
+## Description
+ Set Flourish grid controls 
+
+
+## Usage
+```r
+ 
+chart_grid( 
+  ., 
+  dynamic_columns = NULL, 
+  number_of_columns = NULL, 
+  min_width_per_grid = NULL, 
+  max_width_per_grid = NULL, 
+  grid_margin_width = NULL, 
+  grid_margin_height = NULL, 
+  grid_title_font_size = NULL, 
+  grid_title_align = NULL, 
+  grid_title_color = NULL, 
+  grid_title_padding_top = NULL, 
+  grid_title_padding_bottom = NULL, 
+  grid_animation = NULL, 
+  grid_title_unit_scale = NULL, 
+  grid_title_background = NULL, 
+  grid_title_background_color = NULL, 
+  grid_title_background_padding = NULL, 
+  x_axis_matching = NULL, 
+  x_axis_last_row_only = NULL, 
+  x_axis_first_row_only = NULL, 
+  y_axis_matching = NULL, 
+  y_axis_first_column_only = NULL, 
+  secondary_y_axis_matching = NULL, 
+  secondary_y_axis_last_column_only = NULL, 
+  grid_aspect = NULL, 
+  grid_aspect_mobile = NULL, 
+  grid_aspect_breakpoint = NULL, 
+  grid_comparisons = NULL, 
+  grid_comparisons_stroke = NULL, 
+  grid_comparisons_stroke_width = NULL, 
+  grid_comparisons_stroke_opacity = NULL, 
+  grid_comparisons_fill = NULL, 
+  grid_comparisons_fill_opacity = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| dynamic_columns | Whether the number of columns changes as the with and height of the graph scales. Boolean (True/False) |
+| number_of_columns | Number of columns. Minimum value: 1. |
+| min_width_per_grid | Width per grid (in REM) |
+| max_width_per_grid | Maximum width per grid. |
+| grid_margin_width | Grid margin width |
+| grid_margin_height | Grid margin height |
+| grid_title_font_size | Grid title font size |
+| grid_title_align | Grid title align. Values: "auto", "center", "left" |
+| grid_title_color | Grid title color |
+| grid_title_padding_top | Grid title padding top |
+| grid_title_padding_bottom | Grid title padding bottom |
+| grid_animation | Animate grid. Boolean (True/False) |
+| grid_title_unit_scale | Grid title unit scale. Values: "rem", "facet". |
+| grid_title_background | Grid title background. Values: "none", "full", "text" |
+| grid_title_background_color | Grid title background color |
+| grid_title_background_padding | Grid title background padding |
+| x_axis_matching | Grid X axis matching. Boolean (True/False) |
+| x_axis_last_row_only | Grid X axis last row only. Boolean (True/False) |
+| x_axis_first_row_only | Grid X axis first row only Boolean (True/False) |
+| y_axis_matching | Grid Y axis matching. Boolean (True/False) |
+| y_axis_first_column_only | Grid Y axis first column only. Boolean (True/False) |
+| secondary_y_axis_matching | Grid secondary Y axis matching. Boolean (True/False) |
+| secondary_y_axis_last_column_only | Grid secondary Y axis last column  Boolean (True/False) |
+| grid_aspect | Aspect (desktop). Aspect ratio of each plot in desktop mode, where 1 is square, above 1 is wider, and below 1 is taller. Minimum value: 0.01 |
+| grid_aspect_mobile | Aspect (mobile). Aspect of each plot in mobile mode, where 1 is square, above 1 is wider, and below 1 is taller. Minimum value: 0.01 |
+| grid_aspect_breakpoint | Breakpoint. The width at which mobile mode ends and desktop begins |
+| grid_comparisons | Show comparison lines in grid mode. Boolean (True/False) |
+| grid_comparisons_stroke | Line color |
+| grid_comparisons_stroke_width | Line width |
+| grid_comparisons_stroke_opacity | Line opacity. Maximum value: 1. |
+| grid_comparisons_fill | Fill color |
+| grid_comparisons_fill_opacity | Fill opacity. Maximum value: 1. |
+
+
+
+
+
+
+

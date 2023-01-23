@@ -34,16 +34,24 @@
 #' way we avoid documenting work-in-progress.  The 'latest_commit' value will
 #' simply use whatever is cloned. Pass an SHA value if you wish to fix the
 #' commit to use.
-#' @param reference_template The path to a `.qmd` file to use as the template to
+#' @param build_parent_and_child_reference_pages Boolean variable for whether to build parent and child reference pages for multilingual docs, 
+#' where the child page is for R code which is a tab in the parent doc as a child element.
+#' @param reference_template The path to a `.qmd` or `.md` file to use as the template to
+#' create the reference pages.
+#' @param reference_template_parent The path to a `.qmd` or `.md` file to use as the parent template to
+#' create the reference pages.
+#' @param reference_template_child The path to a `.qmd` or `.md` file to use as the parent template to
 #' create the reference pages.
 #' @param branch Repo branch. Defaults to 'main'
 #' @param package_description Custom description for the package. If NULL then
 #' the package's Title, inside DESCRIPTION, will be used.
 #' @inheritParams ecodown_build
 #' @export
-ecodown_convert <- function(package_source_folder = "",
+ecodown_convert <- function(package_source_folder = here::here(),
                             package_name = fs::path_file(package_source_folder),
-                            quarto_sub_folder = package_name,
+                            quarto_sub_folder = "quarto_docs",
+                            r_sub_folder = "r_package",
+                            python_sub_folder = "python_package",
                             version_folder = "",
                             quarto_folder = here::here(),
                             downlit_options = TRUE,
@@ -57,20 +65,25 @@ ecodown_convert <- function(package_source_folder = "",
                             vignettes_folder = "articles",
                             reference_examples = FALSE,
                             reference_examples_not_run = FALSE,
-                            reference_output = "qmd",
-                            reference_qmd_options = NULL,     
-                            reference_template = NULL,
+                            reference_output = "md",
+                            reference_qmd_options = NULL,  
                             commit = c("latest_tag", "latest_commit"),
                             branch = "main",
-                            package_description = NULL
-                            ) {
+                            package_description = NULL,
+                            build_parent_and_child_reference_pages = TRUE,   
+                            reference_template = NULL,
+                            reference_template_child = NULL,
+                            reference_template_parent = NULL,
+                            r_reference_folder = "r_docs",
+                            python_reference_folder = "py_docs"
+) {
   
   set_verbosity(verbosity)
   
   commit <- commit[1]
   
   qfs <- path(quarto_folder, quarto_sub_folder, version_folder)
-
+  
   sha <- checkout_repo(
     pkg_dir = package_source_folder,
     commit = commit,
@@ -78,7 +91,7 @@ ecodown_convert <- function(package_source_folder = "",
     verbosity = get_verbosity(),
     pkg_name = package_name
   )
-
+  
   sha_file <- path(qfs, ".ecodown")
   if (file_exists(sha_file)) {
     sha_existing <- readLines(sha_file)
@@ -93,13 +106,13 @@ ecodown_convert <- function(package_source_folder = "",
       return()
     }
   }
-
+  
   all_files <- dir_ls(package_source_folder, recurse = TRUE, type = "file")
-
+  
   msg_color_title("Copying/Converting to Quarto")
-
+  
   pkg <- as_pkgdown(package_source_folder)
-
+  
   rel_files <- substr(
     all_files,
     nchar(path_common(all_files)) + 2,
@@ -114,11 +127,14 @@ ecodown_convert <- function(package_source_folder = "",
     pkg = pkg,
     base_folder = qfs,
     reference_folder = reference_folder,
+    build_parent_and_child_reference_pages = build_parent_and_child_reference_pages,
+    r_reference_folder = r_reference_folder,
     vignettes_folder = vignettes_folder,
     examples = reference_examples,
     output = reference_output,
     output_options = reference_qmd_options,
-    template = reference_template
+    template = reference_template,
+    template_parent = reference_template_parent
   )
   
   get_files <- function(pkg_folder) {
@@ -135,7 +151,7 @@ ecodown_convert <- function(package_source_folder = "",
       walk(file_list, ~ exec("package_file", !!! package_file_args, input = .x))
     }
   }
-
+  
   file_readme <- all_files[rel_files == "README.md"]
   file_news <- all_files[rel_files == "NEWS.md"]
   file_vignettes <- get_files("vignettes")
@@ -145,9 +161,9 @@ ecodown_convert <- function(package_source_folder = "",
   if (convert_news) summary_package_files(file_news)
   if (convert_articles) summary_package_files(file_vignettes)
   if (convert_reference) summary_package_files(file_reference, 4)
-
+  
   pkg_files <- as_fs_path(pf)
-
+  
   if (get_verbosity() == "verbose") {
     file_tree(
       pkg_files,
@@ -157,6 +173,7 @@ ecodown_convert <- function(package_source_folder = "",
       verbosity = "verbose"
     )
   }
+  
   
   if (convert_reference && length(file_reference) > 0) {
     ri <- reference_index(
@@ -175,9 +192,9 @@ ecodown_convert <- function(package_source_folder = "",
   }
   
   msg_summary_entry(" |\n")
-
+  
   writeLines(sha, path(qfs, ".ecodown"))
-
+  
   downlit_options(
     package = pkg$package,
     url = quarto_sub_folder,
@@ -189,47 +206,100 @@ package_file <- function(input,
                          base_folder = here::here(),
                          pkg = NULL,
                          reference_folder,
+                         build_parent_and_child_reference_pages = TRUE,  
+                         r_reference_folder = NULL,
                          vignettes_folder,
                          examples = FALSE,
                          template = NULL,
+                         template_parent = NULL,
                          output,
                          output_options) {
   pkg_topics <- pkg$topics
-
+  
   input_name <- path_file(input)
-
+  
   abs_input <- path_abs(input)
-
+  
   input_rel <- tolower(substr(
     abs_input,
     nchar(pkg$src_path) + 2,
     nchar(abs_input)
   ))
-
+  
   input_split <- path_split(input_rel)[[1]]
-
-  output_split <- input_split
-  if (input_split[[1]] == "man") output_split[[1]] <- reference_folder
-  if (input_split[[1]] == "vignettes") output_split[[1]] <- vignettes_folder
-  li <- length(input_split)
-  if (input_split[li] == "readme.md") output_split[li] <- "index.md"
-  output_file <- path(
-    base_folder,
-    paste0(output_split, collapse = "/")
-  )
-  output_folder <- path_dir(output_file)
-  if (!dir_exists(output_folder)) dir_create(output_folder)
-  if (tolower(path_ext(input)) == "rd") {
+  
+  if(isTRUE(build_parent_and_child_reference_pages)){
     
-    out <- reference_to_qmd(input_name[[1]], pkg, template)
-    
-    output_file <- output_file %>% 
-      path_ext_remove() %>%  
-      path(ext = output)
-    
-    writeLines(out, output_file)
-  } else {
-    file_copy(input, output_file, overwrite = TRUE)
+    output_parent_split <- input_split
+    if (input_split[[1]] == "man") output_parent_split[[1]] <- reference_folder
+    output_split <- input_split
+    if (input_split[[1]] == "man") output_split[[1]] <- reference_folder
+    if (input_split[[1]] == "vignettes") output_split[[1]] <- vignettes_folder
+    li <- length(input_split)
+    if (input_split[li] == "readme.md") output_split[li] <- "index.md"
+    output_file_parent <- path(
+      base_folder,
+      paste0(output_parent_split, collapse = "/")
+    )
+    output_file <- path(
+      base_folder,
+      paste0(output_split, collapse = "/")
+    )
+    output_folder <- path_dir(output_file)
+    output_folder_parent <- path_dir(output_file_parent)
+    if (!dir_exists(output_folder_parent)) dir_create(output_folder_parent)
+    if (!dir_exists(output_folder)) dir_create(output_folder)
+    if (tolower(path_ext(input)) == "rd") {
+      
+      out_parent <- reference_to_qmd(input_name[[1]], pkg, template_parent)
+      
+      output_file_parent <- output_file_parent %>% 
+        path_ext_remove() %>%  
+        path(ext = 'qmd') #parent file extensions always need to be .qmd because they have tabsets (which .md files don't support)
+      
+      writeLines(out_parent, output_file_parent)
+      
+      
+      out <- reference_to_qmd(input_name[[1]], pkg, template)
+      
+      output_file <- output_file %>% 
+        path_ext_remove() %>%  
+        path(ext = output)
+      
+      writeLines(out, output_file)
+      
+    } else {
+      file_copy(input, output_file_parent, overwrite = TRUE)
+      file_copy(input, output_file, overwrite = TRUE)
+    }
+  } 
+  
+  if(isFALSE(build_parent_and_child_reference_pages) || is.null(build_parent_and_child_reference_pages)){
+    output_split <- input_split
+    if (input_split[[1]] == "man") output_split[[1]] <- reference_folder
+    if (input_split[[1]] == "vignettes") output_split[[1]] <- vignettes_folder
+    li <- length(input_split)
+    if (input_split[li] == "readme.md") output_split[li] <- "index.md"
+    output_file <- path(
+      base_folder,
+      paste0(output_split, collapse = "/")
+    )
+    output_folder <- path_dir(output_file)
+    if (!dir_exists(output_folder)) dir_create(output_folder)
+    if (tolower(path_ext(input)) == "rd") {
+      
+      out <- reference_to_qmd(input_name[[1]], pkg, template)
+      
+      output_file <- output_file %>% 
+        path_ext_remove() %>%  
+        path(ext = output)
+      
+      writeLines(out, output_file)
+    } else {
+      file_copy(input, output_file, overwrite = TRUE)
+    }
   }
+  
+  # print the output for the child documents
   path_file(output_file)
 }

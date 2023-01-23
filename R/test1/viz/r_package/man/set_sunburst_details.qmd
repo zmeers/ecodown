@@ -1,0 +1,91 @@
+---
+title: "Set sunburst details"
+---
+
+*R/details.R*
+
+## set_sunburst_details
+
+## Description
+ Set sunburst details 
+
+
+## Usage
+```r
+ 
+set_sunburst_details( 
+  ., 
+  sunburst_show_zoomed_node_in_center = NULL, 
+  sunburst_inner_radius = NULL, 
+  sunburst_outer_radius = NULL, 
+  sunburst_depth_fade = NULL, 
+  sunburst_labelling = NULL, 
+  number_of_visible_levels = NULL, 
+  sort_by = NULL, 
+  aggregation_type = NULL, 
+  auto_set_height = NULL, 
+  label_size = NULL, 
+  min_label_size = NULL, 
+  max_label_size = NULL, 
+  label_padding = NULL, 
+  multi_line_labels = NULL, 
+  label_case = NULL, 
+  label_weight = NULL, 
+  bar_axis_label_size = NULL, 
+  bar_axis_labels_above = NULL, 
+  bar_axis_label_space = NULL, 
+  bar_show_value_label = NULL, 
+  value_labels_bold = NULL, 
+  bar_value_label_space = NULL, 
+  stroke_color = NULL, 
+  zoom_out_button_color = NULL, 
+  zoom_out_arrow_color = NULL, 
+  label_color = NULL, 
+  axis_label_color = NULL, 
+  radial_tree_colored_links = NULL, 
+  radial_tree_link_color = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| sunburst_show_zoomed_node_in_center | Show zoomed node in center. Show zoomed node as a circle in the center of the sunburst chart. (If not zoomed, the space is left blank.) |
+| sunburst_inner_radius | Inner radius. As a % of maximum radius |
+| sunburst_outer_radius | Outer radius. As a % of maximum radius |
+| sunburst_depth_fade | Depth fade. How quickly the segments fade with hierachical depth. (Use 1 for no fade.) Min: 0.25. Max: 1 |
+| sunburst_labelling | Labels. How the labels should be oriented. Allowed values: auto, radial, circular |
+| number_of_visible_levels | Visible levels. How many hierarchy levels are visible at once? Min: 1 |
+| sort_by | Sort by. Sort cells by value or by name. (In Circles layout, the circles are placed in the specified order following an approximately spiral path.) Allowed values: "data", "value", "name" |
+| aggregation_type | Size cells by "sum" or "count". |
+| auto_set_height | Auto set height. Automatically determine container height. For example circle packing, sunburst and radial tree will fill width and treemap will use the specified aspect ratio. |
+| label_size | Label size. Label size (relative to root font size). Min: 0.1 |
+| min_label_size | Minimum label size. Minimum label size (relative to root font size). Min: 0.1 |
+| max_label_size | Maximum label size. Maximum label size (relative to root font size) |
+| label_padding | Label padding. Padding (relative to root font size) between label and border. Max: 2 |
+| multi_line_labels | Boolean (True/False). Multi line labels. Display long labels across multiple lines where possible. Currently supported in treemap and circle packing. |
+| label_case | Label case. Determines whether labels are lower or upper case. Items at the top level of the hierarchy can have a different case to the remaining items. Allowed values: allUpperCase (All labels upper case), allLowerCase (All labels lower case), topUpperCase (Top labels upper case), bottomUpperCase (Bottom labels upper case) |
+| label_weight | Label weight. Determines the font weight (normal or bold) of labels. Items at the top level of the hierarchy can have a different weight to the remaining items. Allowed values: allNormal (All labels normal), allBold (All labels bold), topBold (Top labels bold), bottomBold (Bottom labels bold) |
+| bar_axis_label_size | Label size. Axis label size (relative to root font size) |
+| bar_axis_labels_above | Boolean (True/False). |
+| bar_axis_label_space | Space for axis labels. Space available for axis labels (relative to root font size) |
+| bar_show_value_label | Boolean (True/False). Show value label. |
+| value_labels_bold | Bold value labels. Boolean (True/False). |
+| bar_value_label_space | Space for value labels. Space available for value labels (relative to root font size) |
+| stroke_color | Stroke color. |
+| zoom_out_button_color | Button colour. |
+| zoom_out_arrow_color | Arrow colour. |
+| label_color | Label color. |
+| axis_label_color | Axis color. |
+| radial_tree_colored_links | Boolean (True/False). Coloured links. Use coloured links |
+| radial_tree_link_color | Radial tree link colour |
+
+
+
+
+
+
+## See Also
+ Other Flourish heatmap or hierarchy charts:  `bind_circle_packing_data()`, `bind_heatmap_data()`, `bind_hierarchical_bar_data()`, `bind_hierarchy_data`, `bind_radial_tree_data()`, `bind_sunburst_data()`, `bind_treemap_data()`, `set_circle_packing_details()`, `set_heatmap_details()`, `set_hierarchical_bar_details()`, `set_radial_tree_details()`, `set_treemap_details()` 
+

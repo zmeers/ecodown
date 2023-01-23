@@ -1,0 +1,69 @@
+---
+title: "Time slider filter for scatter plots."
+---
+
+*R/chart.R*
+
+## chart_time_slider_controls
+
+## Description
+ Time slider filter for scatter plots. 
+
+
+## Usage
+```r
+ 
+chart_time_slider_controls( 
+  ., 
+  time_slider_updates_axes = NULL, 
+  time_label_show = NULL, 
+  time_label_color = NULL, 
+  time_label_opacity = NULL, 
+  time_label_font_size = NULL, 
+  time_slider_title = NULL, 
+  time_slider_background_color = NULL, 
+  time_slider_font_color = NULL, 
+  time_slider_handle_color = NULL, 
+  time_slider_width_number = NULL, 
+  time_slider_margin = NULL, 
+  time_slider_handle_height = NULL, 
+  time_slider_track_height = NULL, 
+  time_slider_play_button = NULL, 
+  time_slider_auto_loop = NULL, 
+  time_slider_step_time = NULL, 
+  time_slider_restart_pause = NULL, 
+  time_slider_sort_data = NULL, 
+  time_slider_sort_temporal_format = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| time_slider_updates_axes | Update axes when using slider. Allowed values: off, x, y, both |
+| time_label_show | Show time label in chart background. Boolean (True/False). |
+| time_label_color | Colour. |
+| time_label_opacity | Opacity. Max: 1 |
+| time_label_font_size | number Size. As a percent of the default size; the actual size scales with the chart |
+| time_slider_title | Size filter title. |
+| time_slider_background_color | Slider background color |
+| time_slider_font_color | Slider font color |
+| time_slider_handle_color | Slider handle color |
+| time_slider_width_number | Slider width number. Max: 100 |
+| time_slider_margin | Slider label width. Max: 50 |
+| time_slider_handle_height | Slider handle height. Max: 10 |
+| time_slider_track_height | Slider track height. Max: 10 |
+| time_slider_play_button | Add a slider play button. Boolean (True/False). |
+| time_slider_auto_loop | Slider automatically replays. Boolean (True/False). |
+| time_slider_step_time | Time between steps. Measured in seconds, positive values move the slider left to right, negative values move the slider right to left. Min: -100. Max: 100 |
+| time_slider_restart_pause | Pause before loop. Measured in seconds and in addition to the regular step time displayed above. Max: 100 |
+| time_slider_sort_data | Sorting. Allowed values: unsorted, categorical, temporal, numeric |
+| time_slider_sort_temporal_format | Date/time format in data, e.g. "%Y-%m-%d". The date/time format in your data sheet. Used only to sort the data, if required. If your format isn’t in the list, you can enter a custom format using d3-time-format syntax. See npmjs.com/package/d3-time-format for details. |
+
+
+
+
+
+
+

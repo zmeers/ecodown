@@ -1,0 +1,149 @@
+---
+title: "Set racing bar chart details"
+---
+
+*R/details.R*
+
+## set_racing_bar_chart_details
+
+## Description
+ Set racing bar chart details 
+
+
+## Usage
+```r
+ 
+set_racing_bar_chart_details( 
+  ., 
+  plot_column = NULL, 
+  number_of_bars = NULL, 
+  bar_margin_spacing = NULL, 
+  height_mode = NULL, 
+  bar_height = NULL, 
+  bar_empty_spaces = NULL, 
+  sort_enabled = NULL, 
+  sort_ascending = NULL, 
+  hide_bars_below_value = NULL, 
+  color_mode = NULL, 
+  color_single = NULL, 
+  color_single_overrides_value = NULL, 
+  color_single_overrides_color = NULL, 
+  bar_opacity = NULL, 
+  label_max_size = NULL, 
+  label_mode = NULL, 
+  label_color_in = NULL, 
+  label_axis_width = NULL, 
+  show_value = NULL, 
+  label_color_out = NULL, 
+  padding_right = NULL, 
+  image_height = NULL, 
+  image_width = NULL, 
+  image_margin_right = NULL, 
+  image_scale = NULL, 
+  image_circle = NULL, 
+  show_time_counter = NULL, 
+  time_counter_font_size = NULL, 
+  time_counter_color = NULL, 
+  time_counter_line_height = NULL, 
+  show_time_total = NULL, 
+  time_total_font_size = NULL, 
+  time_total_color = NULL, 
+  time_total_label = NULL, 
+  caption_background_color = NULL, 
+  caption_border_color = NULL, 
+  caption_opacity = NULL, 
+  caption_padding = NULL, 
+  caption_text_align = NULL, 
+  caption_position = NULL, 
+  caption_font_size = NULL, 
+  caption_text_color = NULL, 
+  caption_mode = NULL, 
+  caption_image_width = NULL, 
+  caption_image_position = NULL, 
+  caption_space_between = NULL, 
+  text_legend = NULL, 
+  text_legend_title = NULL, 
+  text_legend_subtitle = NULL, 
+  text_legend_caption = NULL, 
+  text_legend_bold = NULL, 
+  axis_text_color = NULL, 
+  axis_font_size = NULL, 
+  axis_color = NULL, 
+  axis_gridline_dash = NULL, 
+  scale_type = NULL, 
+  scale_minimum = NULL, 
+  scale_maximum = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| plot_column | Plot column chart (instead of a bar chart). Boolean (True/False). |
+| number_of_bars | Number of bars. Min: 1 |
+| bar_margin_spacing | Spacing (%). Max: 99 |
+| height_mode | Bar height. Allowed values:"fill_space","specified" |
+| bar_height | Height. Height of bar; expressed as multiple of page font size to make it device dependent. Max: 99 |
+| bar_empty_spaces | Leave spaces if fewer bars than specified. If enabled, the chart and bars will remain the same size as more bars enter the race |
+| sort_enabled | Sorting enabled. Boolean (True/False). |
+| sort_ascending | Default sort mode.  Boolean (True/False). |
+| hide_bars_below_value | Hide bars below value. This will filter all bars that have a value below the number specified in this setting |
+| color_mode | Color mode. Whether to color by category (if you have a category column set in the data area), by each individual bar, or give every bar the same color. Allowed values:"category","bar","single" |
+| color_single | Single color |
+| color_single_overrides_value | Color overrides value. Type the label of the bar whose color you want to set |
+| color_single_overrides_color | Color overrides color. Type the color of the bar whose color you want to set. |
+| bar_opacity | Bar opacity. Max: 1. |
+| label_max_size | maximum font size. |
+| label_mode | Label mode. Allowed values:"bars (labels in axis, images on bars). |
+| label_color_in | Label color |
+| label_axis_width | Label axis width space |
+| show_value | Show value |
+| label_color_out | Label color out |
+| padding_right | Padding space. |
+| image_height | Height. As a % of bar height |
+| image_width | Width. As a % of bar height |
+| image_margin_right | Margin right. As a % of bar height |
+| image_scale | Image sizing. Allowed values:"fill","fit","stretch" |
+| image_circle | Shape. Boolean (True/False) |
+| show_time_counter | Shwo current time. Boolean (True/False) |
+| time_counter_font_size | Size (% of screen). |
+| time_counter_color | Color |
+| time_counter_line_height | Line height. Max: 2 |
+| show_time_total | Show time total. Shows the sum of all the values in the data sheet for the current time, including any bars not currently visible in the chart. Boolean (True/False). |
+| time_total_font_size | Size (% of screen) |
+| time_total_color | Color |
+| time_total_label | Label |
+| caption_background_color | Background color |
+| caption_border_color | Border color |
+| caption_opacity | Opacity. Max: 1 |
+| caption_padding | Padding. In rems - multiples of the base font size. |
+| caption_text_align | Align. Allowed values:"flex-start","center","flex-end" |
+| caption_position | Positon. Allowed values:"top-left","center-left","bottom-left","top-right","center-right","bottom-right","top-center","center-center","bottom-center". |
+| caption_font_size | Font size. In rems = multiples of base font size. |
+| caption_text_color | Color. |
+| caption_mode | Content mode. In “Text with colors” mode, any phrases matching category names will be automatically colored. In HTML mode no colors will be applied, but you can include any html in the data sheet to add images etc, etc. Allowed values:"text_legend","html" |
+| caption_image_width | Width. As a percentage of the caption container width. Max: 80 |
+| caption_image_position | Position. Allowed values:"column","column-reverse","row","row-reverse" |
+| caption_space_between | Space between image and text |
+| text_legend | Allowed values:"auto","custom","off" |
+| text_legend_title | Title. Boolean (True/False). |
+| text_legend_subtitle | Subtitle. Boolean (True/False). |
+| text_legend_caption | Caption. Boolean (True/False). |
+| text_legend_bold | Bold. Boolean (True/False). |
+| axis_text_color | Text color |
+| axis_font_size | Font size |
+| axis_color | Line color |
+| axis_gridline_dash | Line dash. Max: 5 |
+| scale_type | he dynamic scale type sets a dynamix x-axis that will animate with the chart. The fixed or custom scale type sets a fixed maximum value on the x-axis. Allowed values:"auto","auto_fixed","manual". |
+| scale_minimum | minimum axis range. The axis will go from zero to this value, then be dynamic. |
+| scale_maximum | maximum axis range. |
+
+
+
+
+
+
+## See Also
+ Other Flourish line, bar, pie chart and scatterplots:  `bind_data()`, `bind_racing_bar_chart_data()`, `bind_racing_line_chart_data()`, `set_area_details()`, `set_bar_column_details()`, `set_boxplot_details()`, `set_line_details()`, `set_racing_line_chart_details()`, `set_scatterplot_details()`, `set_segment_details()`, `set_violin_details()` 
+

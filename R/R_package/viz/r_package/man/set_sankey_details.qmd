@@ -1,0 +1,99 @@
+---
+title: "Set up sankey details"
+---
+
+*R/details.R*
+
+## set_sankey_details
+
+## Description
+ Set up sankey details 
+
+
+## Usage
+```r
+ 
+set_sankey_details( 
+  ., 
+  mode = NULL, 
+  spread = NULL, 
+  alignment = NULL, 
+  iterate = NULL, 
+  iterations = NULL, 
+  node_width = NULL, 
+  node_padding = NULL, 
+  top_padding = NULL, 
+  bottom_padding = NULL, 
+  show_node_headings = NULL, 
+  node_headings_font_size = NULL, 
+  node_headings_padding = NULL, 
+  node_headings_font_weight = NULL, 
+  node_headings_hide_overlaps = NULL, 
+  node_headings_max_width = NULL, 
+  node_headings_color = NULL, 
+  link_opacity = NULL, 
+  background_opacity = NULL, 
+  label_mode = NULL, 
+  label_outwards_max_width = NULL, 
+  label_color_mode = NULL, 
+  label_color = NULL, 
+  label_outline_color_mode = NULL, 
+  label_outline_color = NULL, 
+  label_outline_width = NULL, 
+  label_responsive = NULL, 
+  label_font_size = NULL, 
+  label_font_size_minimum = NULL, 
+  label_font_size_maximum = NULL, 
+  label_font_weight = NULL, 
+  label_show_values = NULL, 
+  label_show_values_links = NULL, 
+  label_color_links = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| mode | Mode. Allowed values:"alluvial","sankey" |
+| spread | Spread. Allowed values:"step","column" |
+| alignment | Alignment. Allowed values:"justfy","center","left","right" |
+| iterate | Node order. Allowed values:"false (reduce overlaps) |
+| iterations | Iterations. Number of iterations of the layout algorithm before the diagram is drawn. The higher the value, the fewer link crossings you will see but the less likely the order is to match that in the datasheet. Min: 1. Max: 100 |
+| node_width | Node width. Min: 2. Max: 100. |
+| node_padding | Vertical node margin. Max: 20. |
+| top_padding | Top margin. Adds space at the top of the diagram; useful to accomodate labels. Max: 50. |
+| bottom_padding | Bottom margin. Adds space to the bottom of the diagram; useful to accomodate labels. Max: 50. |
+| show_node_headings | Show node headings. Boolean (True/False). |
+| node_headings_font_size | Font size. |
+| node_headings_padding | Padding |
+| node_headings_font_weight | Allowed values:"normal","bold" |
+| node_headings_hide_overlaps | Hide overlaps. Boolean (True/False). |
+| node_headings_max_width | maximum width. |
+| node_headings_color | Color. |
+| link_opacity | Link opacity. Max: 1. |
+| background_opacity | Defocused opacity. When a link or node is in focus, set the opacity of other nodes and links as this value. Max: 1. |
+| label_mode | Allowed values:"outwards (favor inside). |
+| label_outwards_max_width | maximum space for labels. As a percentage of total width. Max: 40 |
+| label_color_mode | Text. Allowed values:"none","auto","fixed". |
+| label_color | Color |
+| label_outline_color_mode | Text. Allowed values:"none","auto","fixed". |
+| label_outline_color | Color |
+| label_outline_width | Outline width. As a percent of font size. |
+| label_responsive | Responsive font size.  Auto changed the label size based on the window size, subject to the specified minimum and max. Allowed values: true (Auto), false (Fixed) |
+| label_font_size | In pizels. |
+| label_font_size_minimum | Min |
+| label_font_size_maximum | Max |
+| label_font_weight | Font weight. Allowed values:"bold","normal" |
+| label_show_values | Show node values. Boolean (True/False) |
+| label_show_values_links | Show link values. Allowed values:"never","focused","always" |
+| label_color_links | Color |
+
+
+
+
+
+
+## See Also
+ Other Other Flourish graphs:  `bind_card_data()`, `bind_chord_diagram_data()`, `bind_gantt_data()`, `bind_network_data()`, `bind_pictogram_data()`, `bind_radar_data()`, `bind_sankey_data()`, `bind_slope_data()`, `bind_word_cloud_data()`, `set_card_details()`, `set_chord_diagram_details()`, `set_countdown_details()`, `set_gantt_details()`, `set_network_details()`, `set_photo_slider_details()`, `set_pictogram_details()`, `set_radar_details()`, `set_slope_details()`, `set_word_cloud_details()` 
+

@@ -1,0 +1,173 @@
+---
+title: "Set racing line chart details"
+---
+
+*R/details.R*
+
+## set_racing_line_chart_details
+
+## Description
+ Set racing line chart details 
+
+
+## Usage
+```r
+ 
+set_racing_line_chart_details( 
+  ., 
+  play_mode = NULL, 
+  zoom_steps_to_show = NULL, 
+  score_value_type = NULL, 
+  higher_scores_win = NULL, 
+  ties_mode = NULL, 
+  height_mode = NULL, 
+  padding_top = NULL, 
+  padding_right = NULL, 
+  padding_bottom = NULL, 
+  padding_left = NULL, 
+  show_button = NULL, 
+  show_replay = NULL, 
+  color_mode = NULL, 
+  color_single = NULL, 
+  color_single_overrides_value = NULL, 
+  color_single_overrides_color = NULL, 
+  line_width = NULL, 
+  line_opacity = NULL, 
+  line_curve = NULL, 
+  line_shade = NULL, 
+  shade_width = NULL, 
+  shade_opacity = NULL, 
+  line_interpolate = NULL, 
+  line_interpolate_opacity = NULL, 
+  line_interpolate_width = NULL, 
+  line_interpolate_stroke_dash = NULL, 
+  start_circle_radius = NULL, 
+  end_circle_radius = NULL, 
+  end_circle_stroke = NULL, 
+  circle_space_between = NULL, 
+  end_circle_stroke_bg = NULL, 
+  circle_image = NULL, 
+  hide_labels_on_hover = NULL, 
+  animate_scores = NULL, 
+  rank_outside_image = NULL, 
+  label_divider = NULL, 
+  rank_inside_color = NULL, 
+  label_max_width = NULL, 
+  label_text_padding_horizontal = NULL, 
+  label_position = NULL, 
+  label_text_padding_vertical = NULL, 
+  label_hide_overlaps = NULL, 
+  label_text_color = NULL, 
+  label_text_size = NULL, 
+  label_text_bg_color = NULL, 
+  label_text_bg_size = NULL, 
+  label_text_line_height = NULL, 
+  label_text_max_lines = NULL, 
+  label_text_weight = NULL, 
+  label_connector_lines = NULL, 
+  label_connector_lines_style = NULL, 
+  label_connector_lines_color = NULL, 
+  label_connector_lines_width = NULL, 
+  label_connector_lines_range = NULL, 
+  label_connector_lines_padding = NULL, 
+  zoom_y_axis = NULL, 
+  caption_background_color = NULL, 
+  caption_border_color = NULL, 
+  caption_opacity = NULL, 
+  caption_padding = NULL, 
+  caption_text_align = NULL, 
+  caption_position = NULL, 
+  caption_font_size = NULL, 
+  caption_text_color = NULL, 
+  caption_mode = NULL, 
+  caption_image_width = NULL, 
+  caption_image_position = NULL, 
+  caption_space_between = NULL, 
+  stage_duration = NULL, 
+  update_duration = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| play_mode | Allowed values: "all", "zoom", "reveal" |
+| zoom_steps_to_show | Visible stages. Min: 1; Max: 20. The number of time slices (each of which is column of data) to show on the X axis.  When in"zoom mode, these time slice are shown at the beginning. (Value is ignored if the number specified is greater than the number of stages in the data.) |
+| score_value_type | Chart mode to show on load. Allowed values:"ranks","scores" |
+| higher_scores_win | Data type. Useful for data where lower scores beat higher scores – e.g. race times. Boolean (True/False). |
+| ties_mode | Rank ties mode. What rank ranks should be given when there are ties? See https://en.wikipedia.org/wiki/Ranking for explanation of names. Allowed values:"competition","dense". |
+| height_mode | Height mode. Allowed values:"auto","fixed","flexible". In"Fill space switches between the two modes depending on the number of lines. |
+| padding_top | Padding top |
+| padding_right | Padding right |
+| padding_bottom | Padding bottom |
+| padding_left | Padding left |
+| show_button | Show button |
+| show_replay | Show replay |
+| color_mode | Color mode. Whether to color by category (if you have a category column set in the data area), by each individual bar, or give every bar the same color. Allowed values:"category","bar","single" |
+| color_single | Single color |
+| color_single_overrides_value | Color overrides value. Type the value of the bar whose color you want to set. |
+| color_single_overrides_color | Color overrides value. Type the color of the bar whose color you want to set. |
+| line_width | Line width |
+| line_opacity | Line opacity. Max: 1. |
+| line_curve | Line curve. Allowed values: curveLinear (Straight), curveMonotoneX (Normal curve), curveNatural (Overflowing curve), curveStep (Step middle), curveStepAfter (Step after), curveStepBefore (Step before) |
+| line_shade | Shading behind line. Boolean (True/False) |
+| shade_width | Width in pixels |
+| shade_opacity | Opacity. Max: 1 |
+| line_interpolate | Plot lines between missing data points. Boolean (True/False) |
+| line_interpolate_opacity | Opacity. Max: 1 |
+| line_interpolate_width | Width. |
+| line_interpolate_stroke_dash | Stroke dash |
+| start_circle_radius | Start radius |
+| end_circle_radius | End radius |
+| end_circle_stroke | Stroke size. |
+| circle_space_between | Minimum space between circles. Ignored when chart is set to fill available space. |
+| end_circle_stroke_bg | Stroke color. Boolean (True/False) |
+| circle_image | Image inside circle. Boolean (True/False) |
+| hide_labels_on_hover | Hide labels on hover. Boolean (True/False) |
+| animate_scores | Animate scores. Boolean (True/False) |
+| rank_outside_image | Value label position. Boolean (True/False) |
+| label_divider | Divider. The character between label and value |
+| rank_inside_color | Color |
+| label_max_width | Maximum label width |
+| label_text_padding_horizontal | Distance. The horizontal space between the data point and the label |
+| label_position | Spread out overlaps. Whether to spread out labels to minimize overlapping. Allowed values:"spread-y (Off) |
+| label_text_padding_vertical | Vertical padding. The vertical space left between labels when spreading them out to avoid overlaps |
+| label_hide_overlaps | Hide overlaps. Whether to hide any labels that are overlapping in their final position |
+| label_text_color | Color. |
+| label_text_size | Size. Max: 100 |
+| label_text_bg_color | Outline. |
+| label_text_bg_size | Outline width. As a % of the font sizeMax: 100 |
+| label_text_line_height | Line height. |
+| label_text_max_lines | maximum lines. The maximum number of lines for each label |
+| label_text_weight | Weight. The vertical space left between labels when positioning them .Predefined values:"normal","bold". |
+| label_connector_lines | Connector lines. Allowed values: auto, on, off |
+| label_connector_lines_style | Line style. Allowed values: straight, step |
+| label_connector_lines_color | Color. |
+| label_connector_lines_width | Width. In rems (a multiple of base font size). Max: 0.5 |
+| label_connector_lines_range | Length. The width of the space given over to lines; in rems, a multiple of base font size |
+| label_connector_lines_padding | Padding. The padding to the left and right of the line; in rems, a multiple of base font size |
+| zoom_y_axis | Dynamic Y axis. Rescales the y axis when filtering or playing in zoomed mode. |
+| caption_background_color | Background color |
+| caption_border_color | Border color |
+| caption_opacity | Opacity. Max: 1 |
+| caption_padding | Padding. In rems - multiples of the base font size. |
+| caption_text_align | Align. Allowed values:"flex-start","center","flex-end" |
+| caption_position | Positon. Allowed values:"top-left","center-left","bottom-left","top-right","center-right","bottom-right","top-center","center-center","bottom-center". |
+| caption_font_size | Font size. In rems = multiples of base font size. |
+| caption_text_color | Color. |
+| caption_mode | Content mode. In “Text with colors” mode, any phrases matching category names will be automatically colored. In HTML mode no colors will be applied, but you can include any html in the data sheet to add images etc, etc. Allowed values:"text_legend","html" |
+| caption_image_width | Width. As a percentage of the caption container width. Max: 80 |
+| caption_image_position | Position. Allowed values:"column","column-reverse","row","row-reverse" |
+| caption_space_between | Space between image and text |
+| stage_duration | Animation duration. The “race” animation length, in milliseconds per stage |
+| update_duration | Mode duration. The animation duration when change between ranks and scores modes |
+
+
+
+
+
+
+## See Also
+ Other Flourish line, bar, pie chart and scatterplots:  `bind_data()`, `bind_racing_bar_chart_data()`, `bind_racing_line_chart_data()`, `set_area_details()`, `set_bar_column_details()`, `set_boxplot_details()`, `set_line_details()`, `set_racing_bar_chart_details()`, `set_scatterplot_details()`, `set_segment_details()`, `set_violin_details()` 
+

@@ -1,0 +1,55 @@
+---
+title: "Set Flourish animation controls"
+---
+
+*R/chart.R*
+
+## chart_animation_controls
+
+## Description
+ Set Flourish animation controls 
+
+
+## Usage
+```r
+ 
+chart_animation_controls( 
+  ., 
+  animation_transition_milliseconds = NULL, 
+  animation_mode_transition_milliseconds = NULL, 
+  animation_style = NULL, 
+  animation_stagger = NULL, 
+  animation_on_load = NULL, 
+  animation_on_exit = NULL, 
+  animation_transition_bind_series = NULL, 
+  animation_transition_bind_data_points = NULL, 
+  network_animation_simulation_speed = NULL, 
+  sankey_animation_intro_duration_seconds = NULL, 
+  sankey_animation_intro_ease_range = NULL, 
+  sports_animation_target = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| animation_transition_milliseconds | Animation transition in milliseconds |
+| animation_mode_transition_milliseconds | Animation mode between chart types in milliseconds |
+| animation_style | Animation style. Controls the animation on load. “Auto” mode will use “Grow” if there are fewer than 100 words visible, “Fade” if there are fewer than 500, and “None” if there are 500 or more. Allowed values: auto,fade,grow,none |
+| animation_stagger | Animation stagger. The delay between each dot starting to move, in seconds; set to 0 to have all dots move simultaneously. |
+| animation_on_load | Boolean (True/False). Animation on chart load. Whether new elements should appear whole or be animated into view. |
+| animation_on_exit | Boolean (True/False). Animation on chart exit.  Whether new elements should disappear whole or be animated out of view. |
+| animation_transition_bind_series | Boolean (True/False). Only animate series with same name. Determines how animations work when the data changes (eg. between slides in a story). When this is on, series (e.g. lines) will attempt to animate to become another line only if they have the same name (i.e. the same column header). |
+| animation_transition_bind_data_points | Boolean (True/False). Only animate points with same label. Determines how animations work when the data changes (eg.  between slides in a story). When this is on, data points (e.g. dots or bars) will attempt to animate to become other data points if they have the same label (e.g. date or category). |
+| network_animation_simulation_speed | Animation speed. Min: 1, Max: 10. |
+| sankey_animation_intro_duration_seconds | Duration. In seconds. |
+| sankey_animation_intro_ease_range | Speed variation. When set at zero, all the links are revealed at an even speed. When set above zero, the lines randomly accelerate and decelerate slightly to give a more natural effect. Max: 100. |
+| sports_animation_target | Animate. Allowed values: position (Position), opacity (Fade), both (Both) |
+
+
+
+
+
+
+

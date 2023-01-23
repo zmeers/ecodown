@@ -1,0 +1,97 @@
+---
+title: "Set network details"
+---
+
+*R/details.R*
+
+## set_network_details
+
+## Description
+ Set network details 
+
+
+## Usage
+```r
+ 
+set_network_details( 
+  ., 
+  constant_node_radius = NULL, 
+  min_node_radius = NULL, 
+  max_node_radius = NULL, 
+  node_scale_type = NULL, 
+  max_node_value = NULL, 
+  auto_scale = NULL, 
+  max_fullness = NULL, 
+  label_show = NULL, 
+  label_size = NULL, 
+  label_color_mode = NULL, 
+  label_color = NULL, 
+  image_opacity = NULL, 
+  fade_opacity = NULL, 
+  fill_color = NULL, 
+  node_stroke_width = NULL, 
+  node_stroke_color = NULL, 
+  node_highlight_stroke_color = NULL, 
+  directional = NULL, 
+  constant_link_width = NULL, 
+  min_link_width = NULL, 
+  max_link_width = NULL, 
+  link_scale_type = NULL, 
+  max_link_value = NULL, 
+  link_color = NULL, 
+  link_opacity = NULL, 
+  link_highlight_color = NULL, 
+  link_highlight_opacity = NULL, 
+  popup_opacity = NULL, 
+  animate_simulaton = NULL, 
+  simulation_speed = NULL, 
+  many_body_strength = NULL, 
+  collision_strength = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| constant_node_radius | Radius. |
+| min_node_radius | Minimum radius. Any smaller circles will be scaled up to the specified level. (Ignored if greater than the “Maximum radius” setting.) |
+| max_node_radius | Maximum radius. Min: 1 |
+| node_scale_type | Scale points relative to:Allowed values: "current", "arbritrary". |
+| max_node_value | Value. Values bigger than this maximum will have a radius equal to the maximum radius |
+| auto_scale | Boolean. Scale points down when not enough space. |
+| max_fullness | maximum total point area. What percent of the space can the points fill before they are scaled down. |
+| label_show | Show: "all", "neighbourhood","click", "none" |
+| label_size | Size. |
+| label_color_mode | Color mode - "auto", "fixed" |
+| label_color | color. |
+| image_opacity | Opacity. Max: 1 |
+| fade_opacity | Opacity of de-emphasized items. When a point is emphasized, how opaque the rest of the network should be. Max: 1 |
+| fill_color | Color |
+| node_stroke_width | Width. Max: 5 |
+| node_stroke_color | Color. When not set, stroke color is same as background color |
+| node_highlight_stroke_color | Color (highlighted). When not set, stroke color is same as background color |
+| directional | Boolean. Show arrows on links. |
+| constant_link_width | Width. |
+| min_link_width | Minimum width. Any smaller links will be scaled up to the specified level. (Ignored if greater than the “Maximum width” setting.) |
+| max_link_width | Maximum width. Min: 1 |
+| link_scale_type | Scale links relative to: "current", "arbritrary" |
+| max_link_value | Value. Values bigger than this maximum will have a width equal to the maximum width |
+| link_color | Color. When not set, uses same color as main text |
+| link_opacity | Opacity. Max: 1 |
+| link_highlight_color | Color (highlighted). When not set, uses same color as main text |
+| link_highlight_opacity | Opacity (highlighted). Max: 1 |
+| popup_opacity | Popup opacity. Max: 1 |
+| animate_simulaton | Boolean. Animate network simulation. Display the initial animation of the network |
+| simulation_speed | Animation speed. Min: 1. Max: 10. |
+| many_body_strength | Repulsion between points. How strongly the points repulse each others. Known as “many-body force”. Measured in arbitrary units. Max: 50 |
+| collision_strength | Collision-force strength. How strongly the points push away from each other when colliding. In arbitrary units. Max: 10 |
+
+
+
+
+
+
+## See Also
+ Other Other Flourish graphs:  `bind_card_data()`, `bind_chord_diagram_data()`, `bind_gantt_data()`, `bind_network_data()`, `bind_pictogram_data()`, `bind_radar_data()`, `bind_sankey_data()`, `bind_slope_data()`, `bind_word_cloud_data()`, `set_card_details()`, `set_chord_diagram_details()`, `set_countdown_details()`, `set_gantt_details()`, `set_photo_slider_details()`, `set_pictogram_details()`, `set_radar_details()`, `set_sankey_details()`, `set_slope_details()`, `set_word_cloud_details()` 
+

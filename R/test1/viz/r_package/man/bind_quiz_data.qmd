@@ -1,0 +1,65 @@
+---
+title: "Bind quiz data"
+---
+
+*R/bindings.R*
+
+## bind_quiz_data
+
+## Description
+ Bind quiz data 
+
+
+## Usage
+```r
+ 
+bind_quiz_data( 
+  ., 
+  questions_data = NULL, 
+  questions_text = NULL, 
+  questions_explanation = NULL, 
+  questions_input_type = NULL, 
+  questions_correct_answers = NULL, 
+  questions_suffix = NULL, 
+  questions_choices = NULL, 
+  scores_data = NULL, 
+  scores_question = NULL, 
+  scores_range = NULL, 
+  scores_explanation = NULL, 
+  scores_image = NULL, 
+  results_data = NULL, 
+  results_range = NULL, 
+  results_text = NULL, 
+  results_image = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| questions_data | Data set for quiz questions |
+| questions_text | Question text |
+| questions_explanation | A short text explanation accompanying the question. |
+| questions_input_type | Question answer type. Type of answer input, choose between "slider" or "multiple choice". |
+| questions_correct_answers | The correct answer to the question. The score will be decided by the difference between this answer and your input. It's possible to Select multiple columns with answers, this will create a dropdown list above the quiz where you can Select which answer to compare to. |
+| questions_suffix | Add a suffix after the value, eg. "%" or "people" (only for "slider" input type) |
+| questions_choices | Options to show in multiple choice questions. Divide using // (eg. Cat `//` Dog `//` Sheep `//` Badger) |
+| scores_data | Data frame for scores data |
+| scores_question | The question that the answer belongs to. |
+| scores_range | The answer to the question. This can be text for multiple choice questions. For slider answers, you can use numbers or number ranges, values could be "0-10" or "4" or an asterisk to Select all answers. You can also add multiple rows with score ranges per question, the more specific scores will take priority (eg. it will choose "4" over "0-10" over "*") |
+| scores_explanation | Text to show after answering question. |
+| scores_image | Picture to show after answering question. |
+| results_data | A data frame for results |
+| results_range | A range of points you're targeting. You can use numbers or number ranges, values could be "0-10" or "4" or an asterisk to Select all answers. You can also add multiple rows with score ranges per question, the more specific scores will take priority (eg. it will choose "4" over "0-10" over "*") |
+| results_text | Results text |
+| results_image | Picture to show after showing results |
+
+
+
+
+
+
+## See Also
+ Other Flourish quizzes, surveys, and tables:  `bind_survey_data()`, `bind_table_data()`, `set_quiz_details()`, `set_survey_details()`, `set_table_details()` 
+

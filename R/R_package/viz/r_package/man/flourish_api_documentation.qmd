@@ -1,0 +1,58 @@
+---
+title: "Flourish template API documentation"
+---
+
+*R/data.R*
+
+## flourish_api_documentation
+
+## Description
+ A data set containing template metadata about Flourish graphs 
+
+## Format
+
+ A data frame with 57 rows and 5 variables:  
+
+template_group
+
+Template grouping - maps, line-bar-pie, etc.
+
+ 
+
+template_id
+
+Template ID. Found in API documentation: 
+
+ 
+
+template_version
+
+Template version number. Found in API documentation: 
+
+ 
+
+chart_type
+
+Chart type. One template may have multiple chart types.
+
+ 
+
+URL
+
+URL for template API documentation.
+
+  
+
+## Usage
+```r
+ 
+flourish_api_documentation 
+```
+
+
+
+
+
+
+
+

@@ -1,0 +1,116 @@
+---
+title: "Set up Flourish legend"
+---
+
+*R/chart.R*
+
+## chart_legend
+
+## Description
+ Set up Flourish legend 
+
+
+## Usage
+```r
+ 
+chart_legend( 
+  ., 
+  legend_type = NULL, 
+  map_legend_group = NULL, 
+  show_legend = NULL, 
+  alignment = NULL, 
+  orientation = NULL, 
+  text_color = NULL, 
+  text_size = NULL, 
+  text_weight = NULL, 
+  title_mode = NULL, 
+  title_weight = NULL, 
+  title = NULL, 
+  text_bold = NULL, 
+  subtitle = NULL, 
+  caption = NULL, 
+  legend_position = NULL, 
+  legend_filtering_mode = NULL, 
+  legend_update_layout_on_filter = NULL, 
+  legend_filter_single_multi = NULL, 
+  legend_mode = NULL, 
+  hide_empty_legend_items = NULL, 
+  icon_height = NULL, 
+  icon_color = NULL, 
+  icon_maximum_width = NULL, 
+  icon_type = NULL, 
+  legend_items_padding = NULL, 
+  shape_fill = NULL, 
+  shape_stroke = NULL, 
+  shape_clip_height = NULL, 
+  shape_small_circle_size = NULL, 
+  binned_label_custom = NULL, 
+  binned_label_mode = NULL, 
+  color_band_height = NULL, 
+  color_band_radius = NULL, 
+  color_band_width = NULL, 
+  legend_maximum = NULL, 
+  legend_minimum = NULL, 
+  order_override = NULL, 
+  swatch_height = NULL, 
+  swatch_radius = NULL, 
+  swatch_width = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| legend_type | Legend type = "categorical", "continuous", "icon", "binned", "size". |
+| map_legend_group | Legend group (maps only) = "points", "regions". |
+| show_legend | Boolean. Show or drop legend. |
+| alignment | string Alignment. Allowed values: start, center, end |
+| orientation | string |
+| text_color | color Color. |
+| text_size | number Size. |
+| text_weight | string Weight. Allowed values: bold (Bold), normal (Normal) |
+| title_mode | string Title mode. Allowed values: auto (Auto), fixed (Fixed) |
+| title_weight | string Weight. Allowed values: bold, normal |
+| title | string Title. |
+| text_bold | boolean Bold text. |
+| subtitle | string |
+| caption | string |
+| legend_position | string Position. Allowed values: above, below. |
+| legend_filtering_mode | Click legend to filter data. If line, bar, pie: allowed values - 'none', 'filter-in', 'filter-out'. If scatter: 'filter_out', 'filter_in', 'off'. |
+| legend_update_layout_on_filter | Network only. Update layout. When clicking a legend item. Allowed values: filter_and_layout (Hide/show groups and update layout), filter_in_position (Hide/show groups in current layout), none (Nothing) |
+| legend_filter_single_multi | Filter on click. Allowed values: none (Off), single (Single), multi (Multi) |
+| legend_mode | Legend mode. “Auto” mode hides the legend in certain situations, such as when each color is already explained by the chart titles in a grid of charts. Allowed values: auto, on, off |
+| hide_empty_legend_items | boolean Hide zero-valued entries. |
+| icon_height | number Height. Height of icon (relative to the base font size) |
+| icon_color | color Color. Fallback color (icon color if not determined by template) |
+| icon_maximum_width | number Max width. |
+| icon_type | Icon type for legend. Allowed values: auto (Automatic), user (User), female (Female), male (Male), baby (Baby), child (Child), wheelchair (Wheelchair), angry (Angry), frown (Frown), meh (Meh), smile (Smile), smile-beam (Smile-beam), thumbs-up (Thumbs-up), thumbs-down (Thumbs-down), hands-helping (Hands-helping), hand-rock (Hand-rock), hand-peace (Hand-peace), dollar-sign (Dollar-sign), euro-sign (Euro-sign), money-bill (Money-bill), money-bill-wave (Money-bill-wave), pound-sign (Pound-sign), coins (Coins), shopping-bag (Shopping-bag), shopping-cart (Shopping-cart), circle (Circle), square (Square), star (Star), heart (Heart), comment (Comment), cat (Cat), dog (Dog), dove (Dove), bus (Bus), car (Car), biking (Biking), running (Running), plane (Plane), suitcase (Suitcase), pizza-slice (Pizza-slice), ice-cream (Ice-cream), coffee (Coffee), wine-glass-alt (Wine-glass-alt), building (Building), home (Home), store (Store), industry (Industry), database (Database), laptop (Laptop), microchip (Microchip), phone (Phone), mobile-alt (Mobile-alt), tv (Tv), clock (Clock), atom (Atom), award (Award), music (Music), leaf (Leaf), lightbulb (Lightbulb), sun (Sun), wrench (Wrench), airbnb (Airbnb), amazon (Amazon), android (Android), apple (Apple), bitcoin (Bitcoin), facebook (Facebook), google (Google), linux (Linux), microsoft (Microsoft), twitter (Twitter), windows (Windows), youtube (Youtube) |
+| legend_items_padding | number Padding. Padding between legend items (in rems) |
+| shape_fill | color Shape fill. |
+| shape_stroke | color Stroke. Hint: set to same value as fill for no stroke |
+| shape_clip_height | number Max height. Maximum height of shape (relative to root font size) |
+| shape_small_circle_size | number Small circle. Proportion of the small circle compared to the big circle. 0.5 means it's half the value of the big circle. Max: 1 |
+| binned_label_custom | Custom label |
+| binned_label_mode | Label mode |
+| color_band_height | Band height |
+| color_band_radius | Band radius |
+| color_band_width | Band width |
+| legend_maximum | Maximum legend |
+| legend_minimum | Minimum legend |
+| order_override | Order override |
+| swatch_height | Swatch height |
+| swatch_radius | Swatch radius |
+| swatch_width | Swatch width |
+
+
+## Section
+
+## Set up legend
+
+ NA 
+
+
+
+
+

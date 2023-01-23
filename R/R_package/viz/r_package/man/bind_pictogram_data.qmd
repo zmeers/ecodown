@@ -1,0 +1,57 @@
+---
+title: "Bind pictogram data"
+---
+
+*R/bindings.R*
+
+## bind_pictogram_data
+
+## Description
+ Bind pictogram data 
+
+
+## Usage
+```r
+ 
+bind_pictogram_data( 
+  ., 
+  pictogram_data = NULL, 
+  pictogram_main_category = NULL, 
+  pictogram_sub_category = NULL, 
+  pictogram_value = NULL, 
+  pictogram_icon_id = NULL, 
+  pictogram_color = NULL, 
+  pictogram_add_to_popup_panel = NULL, 
+  icon_data = NULL, 
+  icon_id = NULL, 
+  icon_name = NULL, 
+  icon_width = NULL, 
+  icon_height = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| pictogram_data | A data frame with pictogram data. |
+| pictogram_main_category | Pictogram main category. The (categorical) column that defines the categories along the main axis. |
+| pictogram_sub_category | Pictogram subcategory. The (categorical) column that defines the categories within each bar. |
+| pictogram_value | Pictogram numeric value.  The (numerical) column that determines the size of each bar. |
+| pictogram_icon_id | IDs for joining icons in the "Icons" datasheet. Must contain IDs that match `icon_id` values. Set to the same column as the Main category or Subcategory. |
+| pictogram_color | Pictogram color. |
+| pictogram_add_to_popup_panel | Makes additional columns (text, emoji, image URLs, etc) available in custom popups. |
+| icon_data | Data frame with icon-related data. |
+| icon_id | Icon ID. Must match `pictogram_icon_id`. |
+| icon_name | Icon name (i.e. "female") or SVG path string (i.e. "M10,10 l80,0 l0,80 l-80,0 z"). |
+| icon_width | Icon width (in px) |
+| icon_height | Icon height (in px) |
+
+
+
+
+
+
+## See Also
+ Other Other Flourish graphs:  `bind_card_data()`, `bind_chord_diagram_data()`, `bind_gantt_data()`, `bind_network_data()`, `bind_radar_data()`, `bind_sankey_data()`, `bind_slope_data()`, `bind_word_cloud_data()`, `set_card_details()`, `set_chord_diagram_details()`, `set_countdown_details()`, `set_gantt_details()`, `set_network_details()`, `set_photo_slider_details()`, `set_pictogram_details()`, `set_radar_details()`, `set_sankey_details()`, `set_slope_details()`, `set_word_cloud_details()` 
+

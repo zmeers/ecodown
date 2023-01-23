@@ -1,0 +1,389 @@
+---
+title: "Set up filter controls"
+---
+
+*R/chart.R*
+
+## chart_filter_controls
+
+## Description
+ Set up filter controls 
+
+
+## Usage
+```r
+ 
+chart_filter_controls( 
+  ., 
+  filter_type = NULL, 
+  filter_title = NULL, 
+  filter_group_button = NULL, 
+  filter_group_button_width_type = NULL, 
+  filter_group_button_width_number = NULL, 
+  filter_dropdown_width_type = NULL, 
+  filter_dropdown_width_number = NULL, 
+  filter_slider_background_color = NULL, 
+  filter_slider_font_color = NULL, 
+  filter_slider_handle_color = NULL, 
+  filter_slider_width_number = NULL, 
+  filter_slider_margin = NULL, 
+  filter_slider_handle_height = NULL, 
+  filter_slider_track_height = NULL, 
+  filter_slider_play_button = NULL, 
+  filter_slider_auto_loop = NULL, 
+  filter_slider_step_time = NULL, 
+  filter_slider_restart_pause = NULL, 
+  filter_sort_data = NULL, 
+  filter_sort_temporal_format = NULL, 
+  filter_include_all = NULL, 
+  filter_include_all_name = NULL, 
+  filter_multiple_options_text = NULL, 
+  filter_multiple_options_add_no_more_results_text = NULL, 
+  row_filter_type = NULL, 
+  row_filter_title = NULL, 
+  row_filter_group_button = NULL, 
+  row_filter_group_button_width_type = NULL, 
+  row_filter_group_button_width_number = NULL, 
+  row_filter_dropdown_width_type = NULL, 
+  row_filter_dropdown_width_number = NULL, 
+  row_filter_slider_background_color = NULL, 
+  row_filter_slider_font_color = NULL, 
+  row_filter_slider_handle_color = NULL, 
+  row_filter_slider_width_number = NULL, 
+  row_filter_slider_margin = NULL, 
+  row_filter_slider_handle_height = NULL, 
+  row_filter_slider_track_height = NULL, 
+  row_filter_slider_play_button = NULL, 
+  row_filter_slider_auto_loop = NULL, 
+  row_filter_slider_step_time = NULL, 
+  row_filter_slider_restart_pause = NULL, 
+  row_filter_sort_data = NULL, 
+  row_filter_sort_temporal_format = NULL, 
+  row_filter_include_all = NULL, 
+  row_filter_include_all_name = NULL, 
+  controls_style_font_size = NULL, 
+  controls_style_font_weight = NULL, 
+  controls_style_padding = NULL, 
+  dropdown_style_background_color = NULL, 
+  dropdown_style_font_size = NULL, 
+  dropdown_style_font_color = NULL, 
+  dropdown_style_border_sides = NULL, 
+  dropdown_style_border_width = NULL, 
+  dropdown_style_border_color = NULL, 
+  dropdown_style_border_transparency = NULL, 
+  dropdown_style_border_radius = NULL, 
+  button_style_background_color = NULL, 
+  button_style_background_selected_color = NULL, 
+  button_style_font_size = NULL, 
+  button_style_font_color = NULL, 
+  button_style_font_selected_color = NULL, 
+  button_style_hover_color = NULL, 
+  button_style_border_width = NULL, 
+  button_style_border_color = NULL, 
+  button_style_border_transparency = NULL, 
+  button_style_border_radius = NULL, 
+  size_type = NULL, 
+  size_title = NULL, 
+  size_group_button = NULL, 
+  size_group_button_width_type = NULL, 
+  size_group_button_width_number = NULL, 
+  size_dropdown_width_type = NULL, 
+  size_dropdown_width_number = NULL, 
+  size_slider_background_color = NULL, 
+  size_slider_font_color = NULL, 
+  size_slider_handle_color = NULL, 
+  size_slider_width_number = NULL, 
+  size_slider_margin = NULL, 
+  size_slider_handle_height = NULL, 
+  size_slider_track_height = NULL, 
+  size_slider_play_button = NULL, 
+  size_slider_auto_loop = NULL, 
+  size_slider_step_time = NULL, 
+  size_slider_restart_pause = NULL, 
+  size_sort_data = NULL, 
+  size_sort_temporal_format = NULL, 
+  hierarchy_ascend_button_visibility = NULL, 
+  line_bar_pie_controls_position = NULL, 
+  log_control_text_linear = NULL, 
+  log_control_text_log = NULL, 
+  log_control_type = NULL, 
+  log_control_title = NULL, 
+  log_control_group_button = NULL, 
+  log_control_group_button_width_type = NULL, 
+  log_control_group_button_width_number = NULL, 
+  log_control_dropdown_width_type = NULL, 
+  log_control_dropdown_width_number = NULL, 
+  log_control_sort_data = NULL, 
+  log_control_sort_temporal_format = NULL, 
+  log_control_slider_background_color = NULL, 
+  log_control_slider_font_color = NULL, 
+  log_control_slider_handle_color = NULL, 
+  log_control_slider_width_number = NULL, 
+  log_control_slider_margin = NULL, 
+  log_control_slider_handle_height = NULL, 
+  log_control_slider_track_height = NULL, 
+  log_control_slider_play_button = NULL, 
+  log_control_slider_auto_loop = NULL, 
+  log_control_slider_step_time = NULL, 
+  log_control_slider_restart_pause = NULL, 
+  survey_controls_panel_background_color = NULL, 
+  survey_controls_panel_background_opacity = NULL, 
+  survey_controls_panel_text_color = NULL, 
+  survey_controls_panel_text_size = NULL, 
+  survey_controls_panel_icon_color = NULL, 
+  survey_controls_panel_width = NULL, 
+  survey_controls_panel_cog_color = NULL, 
+  survey_controls_panel_overlay = NULL, 
+  survey_controls_panel_hide_cog = NULL, 
+  survey_controls_show_group_menu = NULL, 
+  survey_controls_show_color_menu = NULL, 
+  survey_controls_show_size_menu = NULL, 
+  survey_controls_show_compare_menu = NULL, 
+  survey_controls_show_histogram = NULL, 
+  survey_controls_group_by_text = NULL, 
+  survey_controls_shade_by_text = NULL, 
+  survey_controls_size_by_text = NULL, 
+  survey_controls_compare_by_text = NULL, 
+  survey_controls_filter_by_text = NULL, 
+  survey_controls_map_text = NULL, 
+  map_regions_type = NULL, 
+  map_regions_title = NULL, 
+  map_regions_group_button = NULL, 
+  map_regions_group_button_width_type = NULL, 
+  map_regions_group_button_width_number = NULL, 
+  map_regions_dropdown_width_type = NULL, 
+  map_regions_dropdown_width_number = NULL, 
+  map_regions_slider_background_color = NULL, 
+  map_regions_slider_font_color = NULL, 
+  map_regions_slider_handle_color = NULL, 
+  map_regions_slider_width_number = NULL, 
+  map_regions_slider_margin = NULL, 
+  map_regions_slider_handle_height = NULL, 
+  map_regions_slider_track_height = NULL, 
+  map_regions_slider_play_button = NULL, 
+  map_regions_slider_auto_loop = NULL, 
+  map_regions_slider_step_time = NULL, 
+  map_regions_slider_restart_pause = NULL, 
+  map_regions_sort_data = NULL, 
+  map_regions_sort_temporal_format = NULL, 
+  map_points_type = NULL, 
+  map_points_title = NULL, 
+  map_points_group_button = NULL, 
+  map_points_group_button_width_type = NULL, 
+  map_points_group_button_width_number = NULL, 
+  map_points_dropdown_width_type = NULL, 
+  map_points_dropdown_width_number = NULL, 
+  map_points_slider_background_color = NULL, 
+  map_points_slider_font_color = NULL, 
+  map_points_slider_handle_color = NULL, 
+  map_points_slider_width_number = NULL, 
+  map_points_slider_margin = NULL, 
+  map_points_slider_handle_height = NULL, 
+  map_points_slider_track_height = NULL, 
+  map_points_slider_play_button = NULL, 
+  map_points_slider_auto_loop = NULL, 
+  map_points_slider_step_time = NULL, 
+  map_points_slider_restart_pause = NULL, 
+  map_points_sort_data = NULL, 
+  map_points_sort_temporal_format = NULL, 
+  line_race_label_ranks = NULL, 
+  line_race_label_scores = NULL, 
+  line_race_label_replay = NULL, 
+  show_rank_scores_race_button = NULL, 
+  show_replay_button = NULL, 
+  show_sort_button = NULL, 
+  sort_descending_text = NULL, 
+  sort_ascending_text = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| filter_type | Column control type. Choose between a dropdown menu, buttons or a slider. Allowed values: "dropdown", "buttons", "slider". |
+| filter_title | Filter title. |
+| filter_group_button | Grouped buttons. Boolean (True/False). |
+| filter_group_button_width_type | Button group type. Allowed values: "auto", "full", "fixed". |
+| filter_group_button_width_number | Button group width. Max: 100 |
+| filter_dropdown_width_type | Dropdown width type. Allowed values: "auto", "full", "fixed". |
+| filter_dropdown_width_number | Dropdown width. Max: 100 |
+| filter_slider_background_color | Slider background color |
+| filter_slider_font_color | Slider font color |
+| filter_slider_handle_color | Slider handle color |
+| filter_slider_width_number | Slider width number. Max: 100 |
+| filter_slider_margin | Slider label width. Max: 50 |
+| filter_slider_handle_height | Slider handle height. Max: 10 |
+| filter_slider_track_height | Slider track height. Max: 10 |
+| filter_slider_play_button | Add a slider play button. Boolean (True/False). |
+| filter_slider_auto_loop | Slider automatically replays. Boolean (True/False). |
+| filter_slider_step_time | Time between steps. Measured in seconds, positive values move the slider left to right, negative values move the slider right to left. Min: -100. Max: 100 |
+| filter_slider_restart_pause | Pause before loop. Measured in seconds and in addition to the regular step time displayed above. Max: 100 |
+| filter_sort_data | Sorting. Allowed values: unsorted, categorical, temporal, numeric |
+| filter_sort_temporal_format | Date/time format in data, e.g. "%Y-%m-%d". The date/time format in your data sheet. Used only to sort the data, if required. If your format isn’t in the list, you can enter a custom format using d3-time-format syntax. See npmjs.com/package/d3-time-format for details. |
+| filter_include_all | Include an "all" option. Boolean (True/False). |
+| filter_include_all_name | Name of "all" option. |
+| filter_multiple_options_text | Text for selecting multiple options to filter on. Only available for line, bar or pie charts. |
+| filter_multiple_options_add_no_more_results_text | Add a 'no more results' button for multiple options. |
+| row_filter_type | Row control type. Choose between a drop down menu, buttons or a slider. Allowed values: "dropdown", "buttons", "slider". |
+| row_filter_title | Row filter title. |
+| row_filter_group_button | Grouped buttons. Boolean (True/False). |
+| row_filter_group_button_width_type | Button group type. Allowed values: "auto", "full", "fixed". |
+| row_filter_group_button_width_number | Button group width. Max: 100 |
+| row_filter_dropdown_width_type | Dropdown width type. Allowed values: "auto", "full", "fixed". |
+| row_filter_dropdown_width_number | Dropdown width. Max: 100 |
+| row_filter_slider_background_color | Slider background color |
+| row_filter_slider_font_color | Slider font color |
+| row_filter_slider_handle_color | Slider handle color |
+| row_filter_slider_width_number | Slider width number. Max: 100 |
+| row_filter_slider_margin | Slider label width. Max: 50 |
+| row_filter_slider_handle_height | Slider handle height. Max: 10 |
+| row_filter_slider_track_height | Slider track height. Max: 10 |
+| row_filter_slider_play_button | Add a slider play button. Boolean (True/False). |
+| row_filter_slider_auto_loop | Slider automatically replays. Boolean (True/False). |
+| row_filter_slider_step_time | Time between steps. Measured in seconds, positive values move the slider left to right, negative values move the slider right to left. Min: -100. Max: 100 |
+| row_filter_slider_restart_pause | Pause before loop. Measured in seconds and in addition to the regular step time displayed above. Max: 100 |
+| row_filter_sort_data | Sorting. Allowed values: unsorted, categorical, temporal, numeric |
+| row_filter_sort_temporal_format | Date/time format in data, e.g. "%Y-%m-%d". The date/time format in your data sheet. Used only to sort the data, if required. If your format isn’t in the list, you can enter a custom format using d3-time-format syntax. See npmjs.com/package/d3-time-format for details. |
+| row_filter_include_all | Include an "all" option. Boolean (True/False). |
+| row_filter_include_all_name | Name of "all" option. |
+| controls_style_font_size | Font size for all controls. Min: 1, max: 3. |
+| controls_style_font_weight | Font weight. Allowed values: "normal", "bold". |
+| controls_style_padding | Padding around controls. |
+| dropdown_style_background_color | Background color |
+| dropdown_style_font_size | Font size |
+| dropdown_style_font_color | Font color |
+| dropdown_style_border_sides | Border sides |
+| dropdown_style_border_width | Border width |
+| dropdown_style_border_color | Border color |
+| dropdown_style_border_transparency | Border transparency |
+| dropdown_style_border_radius | Border radius |
+| button_style_background_color | Background color |
+| button_style_background_selected_color | Background selected color |
+| button_style_font_size | Font size |
+| button_style_font_color | Font color |
+| button_style_font_selected_color | Font selected color |
+| button_style_hover_color | Font hover color |
+| button_style_border_width | Border width |
+| button_style_border_color | Border color |
+| button_style_border_transparency | Border transparency |
+| button_style_border_radius | Border radius |
+| size_type | Size type. Choose between a drop down menu, buttons or a slider. Allowed values: "dropdown", "buttons", "slider". |
+| size_title | Size filter title. |
+| size_group_button | Grouped buttons. Boolean (True/False). |
+| size_group_button_width_type | Button group type. Allowed values: "auto", "full", "fixed". |
+| size_group_button_width_number | Button group width. Max: 100 |
+| size_dropdown_width_type | Dropdown width type. Allowed values: "auto", "full", "fixed". |
+| size_dropdown_width_number | Dropdown width. Max: 100 |
+| size_slider_background_color | Slider background color |
+| size_slider_font_color | Slider font color |
+| size_slider_handle_color | Slider handle color |
+| size_slider_width_number | Slider width number. Max: 100 |
+| size_slider_margin | Slider label width. Max: 50 |
+| size_slider_handle_height | Slider handle height. Max: 10 |
+| size_slider_track_height | Slider track height. Max: 10 |
+| size_slider_play_button | Add a slider play button. Boolean (True/False). |
+| size_slider_auto_loop | Slider automatically replays. Boolean (True/False). |
+| size_slider_step_time | Time between steps. Measured in seconds, positive values move the slider left to right, negative values move the slider right to left. Min: -100. Max: 100 |
+| size_slider_restart_pause | Pause before loop. Measured in seconds and in addition to the regular step time displayed above. Max: 100 |
+| size_sort_data | Sorting. Allowed values: unsorted, categorical, temporal, numeric |
+| size_sort_temporal_format | Date/time format in data, e.g. "%Y-%m-%d". The date/time format in your data sheet. Used only to sort the data, if required. If your format isn’t in the list, you can enter a custom format using d3-time-format syntax. See npmjs.com/package/d3-time-format for details. |
+| hierarchy_ascend_button_visibility | Ascend from one level of a hierarchical graph to another. Boolean (True/False). |
+| line_bar_pie_controls_position | Plotting order of control position. Allowed values: log_series_row, series_log_row, log_row_series, series_row_log, row_log_series, row_series_log. |
+| log_control_text_linear | Linear text. |
+| log_control_text_log | Log text. |
+| log_control_type | Log type. Choose between a drop down menu, buttons or a slider. Allowed values: "dropdown", "buttons", "slider". |
+| log_control_title | Log filter title. |
+| log_control_group_button | Grouped buttons. Boolean (True/False). |
+| log_control_group_button_width_type | Button group type. Allowed values: "auto", "full", "fixed". |
+| log_control_group_button_width_number | Button group width. Max: 100 |
+| log_control_dropdown_width_type | Dropdown width type. Allowed values: "auto", "full", "fixed". |
+| log_control_dropdown_width_number | Dropdown width. Max: 100 |
+| log_control_sort_data | Sorting. Allowed values: unsorted, categorical, temporal, numeric |
+| log_control_sort_temporal_format | Date/time format in data, e.g. "%Y-%m-%d". The date/time format in your data sheet. Used only to sort the data, if required. If your format isn’t in the list, you can enter a custom format using d3-time-format syntax. See npmjs.com/package/d3-time-format for details. |
+| log_control_slider_background_color | Slider background color |
+| log_control_slider_font_color | Slider font color |
+| log_control_slider_handle_color | Slider handle color |
+| log_control_slider_width_number | Slider width number. Max: 100 |
+| log_control_slider_margin | Slider label width. Max: 50 |
+| log_control_slider_handle_height | Slider handle height. Max: 10 |
+| log_control_slider_track_height | Slider track height. Max: 10 |
+| log_control_slider_play_button | Add a slider play button. Boolean (True/False). |
+| log_control_slider_auto_loop | Slider automatically replays. Boolean (True/False). |
+| log_control_slider_step_time | Time between steps. Measured in seconds, positive values move the slider left to right, negative values move the slider right to left. Min: -100. Max: 100 |
+| log_control_slider_restart_pause | Pause before loop. Measured in seconds and in addition to the regular step time displayed above. Max: 100 |
+| survey_controls_panel_background_color | Survey control panel background color. |
+| survey_controls_panel_background_opacity | Survey control panel background opacity. Max: 1. |
+| survey_controls_panel_text_color | Survey control panel text color |
+| survey_controls_panel_text_size | Survey control panel text size. Max: 3. |
+| survey_controls_panel_icon_color | Survey control panel icon color. Allowed values: "light", "dark". |
+| survey_controls_panel_width | Survey control panel width. Width of the controls panels on wide screens, ignored on mobile. |
+| survey_controls_panel_cog_color | Cog icon color. |
+| survey_controls_panel_overlay | Overlay panel over graphic. Boolean (True/False). |
+| survey_controls_panel_hide_cog | Disable controls toggle in published graphic. When checked, the cog icon for showing/hiding the controls panel is visible only in the visualisation and story editors – not in the published visualisation or story. When making a story you can still lock the panel to be visible or hidden by clicking the cog icon in the story editor. |
+| survey_controls_show_group_menu | Group menu. Populated by all category columns. Boolean (True/False). |
+| survey_controls_show_color_menu | Color menu. Populated by all category columns. Boolean (True/False). |
+| survey_controls_show_size_menu | Size menu. Populated by all continuous number columns. Boolean (True/False). |
+| survey_controls_show_compare_menu | Compare menu. Populated by all category columns; appears only when "Group by" is selected. |
+| survey_controls_show_histogram | Bar mode. |
+| survey_controls_group_by_text | Group by text. |
+| survey_controls_shade_by_text | Shade by text. |
+| survey_controls_size_by_text | Size by text. |
+| survey_controls_compare_by_text | Compare by text. |
+| survey_controls_filter_by_text | Filter by text. |
+| survey_controls_map_text | Group location text. |
+| map_regions_type | Column control type. Choose between a dropdown menu, buttons or a slider. Allowed values: "dropdown", "buttons", "slider". |
+| map_regions_title | Filter title. |
+| map_regions_group_button | Grouped buttons. Boolean (True/False). |
+| map_regions_group_button_width_type | Button group type. Allowed values: "auto", "full", "fixed". |
+| map_regions_group_button_width_number | Button group width. Max: 100 |
+| map_regions_dropdown_width_type | Dropdown width type. Allowed values: "auto", "full", "fixed". |
+| map_regions_dropdown_width_number | Dropdown width. Max: 100 |
+| map_regions_slider_background_color | Slider background color |
+| map_regions_slider_font_color | Slider font color |
+| map_regions_slider_handle_color | Slider handle color |
+| map_regions_slider_width_number | Slider width number. Max: 100 |
+| map_regions_slider_margin | Slider label width. Max: 50 |
+| map_regions_slider_handle_height | Slider handle height. Max: 10 |
+| map_regions_slider_track_height | Slider track height. Max: 10 |
+| map_regions_slider_play_button | Add a slider play button. Boolean (True/False). |
+| map_regions_slider_auto_loop | Slider automatically replays. Boolean (True/False). |
+| map_regions_slider_step_time | Time between steps. Measured in seconds, positive values move the slider left to right, negative values move the slider right to left. Min: -100. Max: 100 |
+| map_regions_slider_restart_pause | Pause before loop. Measured in seconds and in addition to the regular step time displayed above. Max: 100 |
+| map_regions_sort_data | Sorting. Allowed values: unsorted, categorical, temporal, numeric |
+| map_regions_sort_temporal_format | Format date-time variable (e.g. "%YYYY %mm %dd"). |
+| map_points_type | Column control type. Choose between a dropdown menu, buttons or a slider. Allowed values: "dropdown", "buttons", "slider". |
+| map_points_title | Filter title. |
+| map_points_group_button | Grouped buttons. Boolean (True/False). |
+| map_points_group_button_width_type | Button group type. Allowed values: "auto", "full", "fixed". |
+| map_points_group_button_width_number | Button group width. Max: 100 |
+| map_points_dropdown_width_type | Dropdown width type. Allowed values: "auto", "full", "fixed". |
+| map_points_dropdown_width_number | Dropdown width. Max: 100 |
+| map_points_slider_background_color | Slider background color |
+| map_points_slider_font_color | Slider font color |
+| map_points_slider_handle_color | Slider handle color |
+| map_points_slider_width_number | Slider width number. Max: 100 |
+| map_points_slider_margin | Slider label width. Max: 50 |
+| map_points_slider_handle_height | Slider handle height. Max: 10 |
+| map_points_slider_track_height | Slider track height. Max: 10 |
+| map_points_slider_play_button | Add a slider play button. Boolean (True/False). |
+| map_points_slider_auto_loop | Slider automatically replays. Boolean (True/False). |
+| map_points_slider_step_time | Time between steps. Measured in seconds, positive values move the slider left to right, negative values move the slider right to left. Min: -100. Max: 100 |
+| map_points_slider_restart_pause | Pause before loop. Measured in seconds and in addition to the regular step time displayed above. Max: 100 |
+| map_points_sort_data | Sorting. Allowed values: unsorted, categorical, temporal, numeric |
+| map_points_sort_temporal_format | Format date-time variable (e.g. "%YYYY %mm %dd"). |
+| line_race_label_ranks | Line race charts only. Label rank controls. |
+| line_race_label_scores | Line race charts only. Label scores control. |
+| line_race_label_replay | Line race charts only. Label replay. |
+| show_rank_scores_race_button | Show rank scores for lines/bar charts. |
+| show_replay_button | Show replay button. |
+| show_sort_button | Show sort button. |
+| sort_descending_text | Text for "descending" button. |
+| sort_ascending_text | Text for "ascending" button. |
+
+
+
+
+
+
+

@@ -1,0 +1,104 @@
+---
+title: "Set Flourish color scales"
+---
+
+*R/chart.R*
+
+## chart_color_scale
+
+## Description
+ Set Flourish color scales 
+
+
+## Usage
+```r
+ 
+chart_color_scale( 
+  ., 
+  sports_field_group = NULL, 
+  map_group = NULL, 
+  mode = NULL, 
+  scale_type = NULL, 
+  categorical_palette = NULL, 
+  categorical_extend = NULL, 
+  categorical_custom_value = NULL, 
+  categorical_custom_color = NULL, 
+  numeric_type = NULL, 
+  binning = NULL, 
+  bin_mode = NULL, 
+  bin_count = NULL, 
+  bin_thresholds = NULL, 
+  sequential_palette = NULL, 
+  sequential_reverse = NULL, 
+  sequential_custom_min = NULL, 
+  sequential_custom_max = NULL, 
+  sequential_space = NULL, 
+  sequential_custom_domain = NULL, 
+  sequential_domain_min = NULL, 
+  sequential_domain_max = NULL, 
+  diverging_palette = NULL, 
+  diverging_reverse = NULL, 
+  diverging_custom_min = NULL, 
+  diverging_custom_mid = NULL, 
+  diverging_custom_max = NULL, 
+  diverging_space = NULL, 
+  diverging_domain_min = NULL, 
+  diverging_domain_mid = NULL, 
+  diverging_domain_max = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| sports_field_group | string Sports field group. Color indiviual categories or by team. Allowed values: "categories", "teams" |
+| map_group | string Map group. Color maps by regions or by points. Allowed values: "regions", "points" |
+| mode | string Color mode. Allowed values: column (By column), row (By row) |
+| scale_type | string Scale type. Allowed values: categorical, numeric |
+| categorical_palette | colors Palette. |
+| categorical_extend | boolean Extend. Automatically generate additional colours when needed to avoid the palette colours being used more than once. |
+| categorical_custom_value | text Custom overrides. Key vector that you want to map a color to -e.g. c("Trump", "Biden"). |
+| categorical_custom_color | text Custom overrides. Key vector that you want to map a key to -e.g. c("red", "blue"). |
+| numeric_type | string Scale type. Allowed values: sequential (Sequential), diverging (Diverging). |
+| binning | boolean In linear mode, the color scale will run as a smooth gradient between 2 colors. In binned mode, the gradient will be divided in smaller blocks. Allowed values: false (Linear), true (Binned) |
+| bin_mode | string Binning mode. Allowed values: fixed (Fixed width), quantile (Quantile), custom (Custom thresholds) |
+| bin_count | number Number of bins. |
+| bin_thresholds | string Custom thresholds. Write your custom thresholds as a vector - e.g. c(5, 10, 15). |
+| sequential_palette | string Palette. Allowed values: Oranges, Reds, Blues, Greens, Greys, Purples, Viridis, Inferno, Magma, Plasma, Warm, Cool, CubehelixDefault (Cubehelix), BuGn (Blue/Green), BuPu (Blue/Purple), GnBu (Green/Blue), OrRd (Orange/Red), PuBuGn (Purple/Blue/Green), PuBu (Purple/Blue), PuRd (Purple/Red), RdPu (Red/Purple), YlGnBu (Yellow/Blue/Green), YlGn (Yellow/Green), YlOrBr (Yellow/Orange/Brown), YlOrRd (Yellow/Orange/Red), Carrots, Custom |
+| sequential_reverse | boolean Reverse. |
+| sequential_custom_min | color Minimum color. |
+| sequential_custom_max | color Maximum color. |
+| sequential_space | string Color space. Allowed values: "rgb",  "lab",  "hcl",  "hsl" |
+| sequential_custom_domain | boolean Domain. Allowed values: false (Auto), true (Custom) |
+| sequential_domain_min | number Min. |
+| sequential_domain_max | number Max. |
+| diverging_palette | Palette. Allowed values: "RdBu"(Red/Blue), "RdYlGn" (Red/Yellow/Green), "PiYG"(Pink/Yellow/Green), "BrBG"(Brown/Blue/Green), "PRGn"(Purple/Red/Green), "PuOr"(Purple/Orange), "RdGy"(Red/Grey), "RdYlBu" (Red/Yellow/Blue), "Spectral", "Custom" |
+| diverging_reverse | boolean Reverse. |
+| diverging_custom_min | color Minimum color. |
+| diverging_custom_mid | color Midpoint color. |
+| diverging_custom_max | color Maximum color. |
+| diverging_space | string Color space. Allowed values: "rgb", "lab", "hcl", "hsl" |
+| diverging_domain_min | number Min. |
+| diverging_domain_mid | number Mid. |
+| diverging_domain_max | number Max. |
+
+
+## Section
+
+## Categorical color palettes
+
+ NA 
+
+## Sequential color palettes
+
+ NA 
+
+## Diverging color palettes
+
+ NA 
+
+
+
+
+

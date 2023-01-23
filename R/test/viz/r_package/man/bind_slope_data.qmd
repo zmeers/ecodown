@@ -1,0 +1,47 @@
+---
+title: "Bind slope chart data"
+---
+
+*R/bindings.R*
+
+## bind_slope_data
+
+## Description
+ Bind slope chart data 
+
+
+## Usage
+```r
+ 
+bind_slope_data( 
+  ., 
+  data = NULL, 
+  id = NULL, 
+  value = NULL, 
+  line_thickness = NULL, 
+  filter = NULL, 
+  category = NULL, 
+  add_to_panel_popup = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| data | A slope data set. |
+| id | The name of the data series (eg. voting district, data mode) |
+| value | Values for that data series (eg. % of votes). |
+| line_thickness | Line thickness. |
+| filter | Filter |
+| category | Category |
+| add_to_panel_popup | Makes additional columns (text, emoji, image URLs, etc) available in custom popups |
+
+
+
+
+
+
+## See Also
+ Other Other Flourish graphs:  `bind_card_data()`, `bind_chord_diagram_data()`, `bind_gantt_data()`, `bind_network_data()`, `bind_pictogram_data()`, `bind_radar_data()`, `bind_sankey_data()`, `bind_word_cloud_data()`, `set_card_details()`, `set_chord_diagram_details()`, `set_countdown_details()`, `set_gantt_details()`, `set_network_details()`, `set_photo_slider_details()`, `set_pictogram_details()`, `set_radar_details()`, `set_sankey_details()`, `set_slope_details()`, `set_word_cloud_details()` 
+

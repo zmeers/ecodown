@@ -1,0 +1,43 @@
+---
+title: "Set parliament details"
+---
+
+*R/details.R*
+
+## set_parliament_details
+
+## Description
+ Set parliament details 
+
+
+## Usage
+```r
+ 
+set_parliament_details( 
+  ., 
+  number_of_seats = NULL, 
+  hemicycle_arc = NULL, 
+  circle_inner = NULL, 
+  number_of_rows = NULL, 
+  use_hover_animation = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| number_of_seats | Number of seats. This number is ignored if the value is lower than the actual number of seats in your data Min: 1. Max: 40000 |
+| hemicycle_arc | Size of arc. In degrees. Min: 10. Max: 360 |
+| circle_inner | Inner space. As a % of the circle. Max: 90 |
+| number_of_rows | Number of Rows. Min: 1 |
+| use_hover_animation | Highlight parties on hover. Boolean (True/False) |
+
+
+
+
+
+
+## See Also
+ Other Politics:  `bind_election_results_data()`, `bind_parliament_data()`, `set_election_results_details()` 
+

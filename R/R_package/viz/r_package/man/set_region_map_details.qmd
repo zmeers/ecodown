@@ -1,0 +1,235 @@
+---
+title: "Set region map details"
+---
+
+*R/details.R*
+
+## set_region_map_details
+
+## Description
+ Set region map details 
+
+
+## Usage
+```r
+ 
+set_region_map_details( 
+  ., 
+  map_type = NULL, 
+  map_style_enabled = NULL, 
+  map_style_base = NULL, 
+  map_style_custom_enabled = NULL, 
+  map_style_monochrome_color = NULL, 
+  map_style_custom_toner_primary = NULL, 
+  map_style_custom_toner_secondary = NULL, 
+  map_style_custom_json = NULL, 
+  map_style_custom_palette_ground = NULL, 
+  map_style_custom_palette_ocean = NULL, 
+  map_style_custom_palette_grass = NULL, 
+  map_style_custom_palette_buildings = NULL, 
+  map_style_custom_palette_road = NULL, 
+  map_style_custom_palette_road_outline = NULL, 
+  map_style_custom_palette_text_fill = NULL, 
+  map_style_custom_palette_text_opacity = NULL, 
+  map_style_custom_palette_text_stroke = NULL, 
+  map_style_custom_palette_halo_opacity = NULL, 
+  map_style_custom_palette_border = NULL, 
+  map_style_font_face = NULL, 
+  map_style_font_weight = NULL, 
+  map_style_show_borders = NULL, 
+  map_style_show_roads = NULL, 
+  map_style_show_labels = NULL, 
+  map_style_show_landuse = NULL, 
+  map_style_show_water = NULL, 
+  map_projection_type = NULL, 
+  map_projection_background_color = NULL, 
+  map_projection_ocean_color = NULL, 
+  map_style_raster_tile_url = NULL, 
+  map_style_raster_scheme = NULL, 
+  map_style_raster_tile_size = NULL, 
+  map_style_raster_minzoom = NULL, 
+  map_style_raster_maxzoom = NULL, 
+  map_style_raster_attribution = NULL, 
+  map_language_auto = NULL, 
+  map_language_alts = NULL, 
+  map_language = NULL, 
+  map_projection_longitude = NULL, 
+  map_projection_latitude = NULL, 
+  map_projection_roll = NULL, 
+  map_graticules_enabled = NULL, 
+  map_graticules_color = NULL, 
+  map_graticules_width = NULL, 
+  map_graticules_opacity = NULL, 
+  map_graticules_longitude_step = NULL, 
+  map_graticules_latitude_step = NULL, 
+  map_initial_type = NULL, 
+  map_initial_pitch_tiles = NULL, 
+  map_initial_bearing_tiles = NULL, 
+  map_initial_pitch_projection = NULL, 
+  map_initial_bearing_projection = NULL, 
+  map_initial_latitude = NULL, 
+  map_initial_longitude = NULL, 
+  map_initial_zoom = NULL, 
+  map_initial_bounds_longitude_minimum = NULL, 
+  map_initial_bounds_latitude_minimum = NULL, 
+  map_initial_bounds_longitude_maximum = NULL, 
+  map_initial_bounds_latitude_maximum = NULL, 
+  map_aspect_type = NULL, 
+  map_aspect_width = NULL, 
+  map_aspect_height = NULL, 
+  map_zoom_minimum = NULL, 
+  map_zoom_maximum = NULL, 
+  map_bound_position = NULL, 
+  map_longitude_minimum = NULL, 
+  map_latitude_minimum = NULL, 
+  map_longitude_maximum = NULL, 
+  map_latitude_maximum = NULL, 
+  map_render_world_copies = NULL, 
+  map_animation_enabled = NULL, 
+  map_animation_type = NULL, 
+  map_animation_duration = NULL, 
+  map_animation_speed = NULL, 
+  map_interactive = NULL, 
+  map_controls_allow_rotation = NULL, 
+  map_controls_geolocator_enabled = NULL, 
+  map_controls_geolocator_alignment = NULL, 
+  map_controls_fullscreen_enabled = NULL, 
+  map_controls_fullscreen_alignment = NULL, 
+  inset_map_display = NULL, 
+  inset_map_rotate = NULL, 
+  inset_map_fill_color = NULL, 
+  inset_map_ocean_color = NULL, 
+  inset_map_stroke_color = NULL, 
+  inset_map_outline_color = NULL, 
+  inset_map_bounds_color = NULL, 
+  inset_map_bounds_opacity = NULL, 
+  inset_map_size_units = NULL, 
+  inset_map_size_desktop_pixels = NULL, 
+  inset_map_size_mobile_pixels = NULL, 
+  inset_map_size_desktop_viewport = NULL, 
+  inset_map_size_mobile_viewport = NULL, 
+  geojson_elevation_enabled = NULL, 
+  geojson_elevation_normalize = NULL, 
+  geojson_elevation_scale = NULL, 
+  geojson_stroke_enabled = NULL, 
+  geojson_stroke_color = NULL, 
+  geojson_fill_enabled = NULL, 
+  geojson_fill_color = NULL, 
+  geojson_opacity = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| map_type | Map type. Allowed values: "tiles" (Vector), "raster" (Raster), "projection" (Projection) |
+| map_style_enabled | Boolean. Background map_ |
+| map_style_base | Map style. Allowed values: "flourish-light" (Flourish Light), "flourish-dark" (Flourish Dark), "flourish-2-tone" (Flourish 2-Tone), "positron" (Positron), "osm-bright" (OSM Bright), "klokantech-basic" (Klokantech Basic), "klokantech-3d" (Klokantech 3D), "fiord-color" (Fiord), "toner" (Toner), "dark-matter" (Dark Matter), "custom-monochrome" (Custom: Monochrome), "custom-palette" (Custom: Palette), "custom-json" (Custom: JSON) |
+| map_style_custom_enabled | Customize layers. |
+| map_style_monochrome_color | Map base color. |
+| map_style_custom_toner_primary | Primary toner color |
+| map_style_custom_toner_secondary | Secondary toner color |
+| map_style_custom_json | Custom JSON style data. Include your own custom mapbox-gl-js style for full control over your map appearance. Note that we use tiles that match the OpenMapTiles schema, so it is recommended that you use https://maputnik.github.io/ (Maputnik) to create your styles. |
+| map_style_custom_palette_ground | Ground color. |
+| map_style_custom_palette_ocean | Ocean color |
+| map_style_custom_palette_grass | Nature color. |
+| map_style_custom_palette_buildings | Building color. |
+| map_style_custom_palette_road | Road color. |
+| map_style_custom_palette_road_outline | Road outline color. |
+| map_style_custom_palette_text_fill | Tet color |
+| map_style_custom_palette_text_opacity | Text opacity. Max: 1 |
+| map_style_custom_palette_text_stroke | Text outline color |
+| map_style_custom_palette_halo_opacity | Text outline opacity. Max: 1 |
+| map_style_custom_palette_border | State/national border colors. |
+| map_style_font_face | Font override. Replace the map default fonts with a font of your choice. Allowed values: "none" (None), "layout" (Use layout settings), "Cabin Sketch", "Coda", "Fira Mono", "Lobster", "Lora", "Merriweather", "Metropolis", "Montserrat", "Noto Sans", "Nunito", "Open Sans", "Oswald", "Overpass Mono", "Playfair Display", "PT Sans Narrow", "PT Sans Caption", "PT Sans", "Quicksand", "Roboto Condensed", "Roboto", "Source Sans Pro" |
+| map_style_font_weight | Font weight. Min: 100. Max: 900 |
+| map_style_show_borders | Boolean. Display borders. |
+| map_style_show_roads | Boolean. Display transport. |
+| map_style_show_labels | Boolean Display labels. |
+| map_style_show_landuse | Boolean. Display land use. |
+| map_style_show_water | Boolean. Display water. |
+| map_projection_type | Projection. Allowed values: "Albers (30° & 45°)", "Albers USA", "August", "Azimuthal Equidistant", "Aitoff", "Baker", "Boggs", "Braun's Stereographic", "Bromley", "Craster Parabolic", "Eckert I", "Eckert II", "Eckert III", "Eckert IV", "Eckert V", "Eckert VI", "Eisenlohr", "Equirectangular", "Fahey", "Foucaut", "Ginzburg IV", "Ginzburg V", "Ginzburg VI", "Ginzburg VIII", "Ginzburg IX", "Gnomonic", "Hammer", "Kavrayskiy VII", "McBryde-Thomas Flat-Polar Parabolic", "McBryde-Thomas Flat-Polar Quartic", "McBryde-Thomas Flat-Polar Sinusoidal", "Miller (modified Mercator)", "Mollweide", "Natural Earth I", "Natural Earth II", "Orthographic", "Robinson", "Sinusoidal", "Stereographic", "Wagner IV", "Wagner VI", "Winkel Tripel" |
+| map_projection_background_color | Background color. |
+| map_projection_ocean_color | Ocean color. |
+| map_style_raster_tile_url | Raster tile URL. |
+| map_style_raster_scheme | Tile scheme. Allowed values: "xyz" (Web Mercator (xyz)), "tms" (OSGeo (tms)) |
+| map_style_raster_tile_size | Tile size. Allowed values: "128", "256", "512", "1024" |
+| map_style_raster_minzoom | Min. tile zoom. Max: 22 |
+| map_style_raster_maxzoom | Max. tile zoom. Max: 22 |
+| map_style_raster_attribution | Tile attribution. |
+| map_language_auto | Boolean. Detect language. Automatically changes the language used on the base map to match the viewer's language settings. |
+| map_language_alts | Boolean. Display alternatives. Whether or not to display latin alternatives for non-latin languages (or vice versa) |
+| map_language | Language. Allowed values: "native" (Local language), "ar" (Arabic), "az" (Azerbaijani), "be" (Belarusian), "bg" (Bulgarian), "br" (Breton), "bs" (Bosnian), "ca" (Catalan), "cs" (Czech), "cy" (Welsh), "da" (Danish), "de" (German), "el" (Greek), "en" (English), "eo" (Esperanto), "es" (Spanish), "et" (Estonian), "fi" (Finnish), "fr" (French), "fy" (Western Frisian), "ga" (Irish), "gd" (Scottish Gaelic), "he" (Hebrew), "hr" (Croatian), "hu" (Hungarian), "hy" (Armenian), "is" (Icelandic), "it" (Italian), "ja" (Japanese), "ja_kana" (Japanese Kana form), "ja_rm" (Romanization of Japanese), "ka" (Georgian), "kk" (Kazakh), "kn" (Kannada), "ko" (Korean), "ko_rm" (Romanization of Korean), "la" (Latin), "lb" (Luxembourgish), "lt" (Lithuanian), "lv" (Latvian), "mk" (Macedonian), "mt" (Maltese), "ml" (Malayalam), "nl" (Dutch), "no" (Norwegian), "pl" (Polish), "pt" (Portuguese), "rm" (Romansh), "ro" (Romania), "ru" (Russian), "sk" (Slovak), "sl" (Slovene), "sq" (Albanian), "sr" (Serbian (Cyrillic)), "sr-Latn" (Serbian (Latin)), "sv" (Swedish), "th" (Thai), "tr" (Turkish), "uk" (Ukrainian), "zh" (Chinese) |
+| map_projection_longitude | Centre longitude |
+| map_projection_latitude | Centre latitude |
+| map_projection_roll | Rotation. |
+| map_graticules_enabled | Boolean. Graticules enabled. |
+| map_graticules_color | Graticule color. |
+| map_graticules_width | Graticule width. Max: 10 |
+| map_graticules_opacity | Graticule opacity. Max: 100 |
+| map_graticules_longitude_step | Graticule longitude separation (°). Max: 90 |
+| map_graticules_latitude_step | Graticule latitude separation (°). Max: 90 |
+| map_initial_type | Initial viewport. By default, the initial viewport of the map is automatically set to include every visible object. The "centroid" option allows you to select a custom latitude, longitude and zoom. The "bounds" option lets you specify a custom bounding box for the viewport to enclose. Selecting "world" will display the whole world within the viewport, regardless of your data or settings. Allowed values: "auto (Auto), "centroid_zoom" (Centroid), "bounding_box" (Bounds), "world" (World) |
+| map_initial_pitch_tiles | Pitch tiles. The amount of vertical rotation to apply to the map when it first loads. At zero the map will face completely top-down. Increasing the value to larger values will give the map the illusion of a 3D perspective. Max: 60 |
+| map_initial_bearing_tiles | Bearing. The direction the map should face when it first loads, in degrees. When set to zero the map will load facing north, at 180 the map will face south, and so on. Min: -180. Max: 180 |
+| map_initial_pitch_projection | Pitch projecton The amount of vertical rotation to apply to the map when it first loads. At zero the map will face completely top-down. Increasing the value to larger values will give the map the illusion of a 3D perspective.. Max: 60 |
+| map_initial_bearing_projection | Bearing projection. The direction the map should face when it first loads, in degrees. When set to zero the map will load facing north, at 180 the map will face south, and so on. Min: -180. Max: 180 |
+| map_initial_latitude | Latitude. Min: -90. Max: 90 |
+| map_initial_longitude | Longitude. Min: -180. Max: 180 |
+| map_initial_zoom | Zoom. Max: 22 |
+| map_initial_bounds_longitude_minimum | minimum longitude. Min: -180. Max: 180 |
+| map_initial_bounds_latitude_minimum | minimum latitude. Min: -90. Max: 90 |
+| map_initial_bounds_longitude_maximum | maximum longitude. Min: -180. Max: 180 |
+| map_initial_bounds_latitude_maximum | maximum latitude. Min: -90. Max: 90 |
+| map_aspect_type | Resize by aspect ratio. Allowed values: none, custom |
+| map_aspect_width | Width. Min: 1 |
+| map_aspect_height | Height. Min: 1 |
+| map_zoom_minimum | minimum zoom. Limit the map zoom level so that the user cannot zoom out past a certain point. Max: 22 |
+| map_zoom_maximum | maximum zoom. Limit the map zoom level so that the user cannot zoom in past a certain point. Max: 22 |
+| map_bound_position | Boolean. Limit viewport bounds. Enable this setting to restrict the viewport within a specific bounding box. |
+| map_longitude_minimum | minimum viewport longitude. Min: -180. Max: 180 |
+| map_latitude_minimum | minimum viewport latitude. Min: -90. Max: 90 |
+| map_longitude_maximum | maximum viewport longitude. Min: -180. Max: 180 |
+| map_latitude_maximum | maximum viewport latitude. Min: -90. Max: 90 |
+| map_render_world_copies | Repeat map horizontally. The map will display copies of the world on either side at higher zoom levels by default. Disable this if you would prefer only the one copy be visible. |
+| map_animation_enabled | Animate zoom & panning. |
+| map_animation_type | Animation type. Allowed values: speed, duration |
+| map_animation_duration | Duration (seconds). Min: 0.01. Max: 60 |
+| map_animation_speed | Speed. Min: 0.01. Max: 4 |
+| map_interactive | Boolean. Allow user interaction. |
+| map_controls_allow_rotation | Boolean. Allow rotation. |
+| map_controls_geolocator_enabled | Use geolocator control. |
+| map_controls_geolocator_alignment | Geolocator control position. Allowed values: top-left, top-right, bottom-left, bottom-right |
+| map_controls_fullscreen_enabled | boolean Use fullscreen control. |
+| map_controls_fullscreen_alignment | Fullscreen control position. Allowed values: top-left, top-right, bottom-left, bottom-right |
+| inset_map_display | Display map_ |
+| inset_map_rotate | Boolean. Rotate with camera. |
+| inset_map_fill_color | Region fill color. |
+| inset_map_ocean_color | Ocean color. |
+| inset_map_stroke_color | Region stroke color. |
+| inset_map_outline_color | Outline color. |
+| inset_map_bounds_color | Region bounds color. |
+| inset_map_bounds_opacity | Region bounds opacity. Max: 1 |
+| inset_map_size_units | Size units. Allowed values: px, vh, vw, vmin, vmax |
+| inset_map_size_desktop_pixels | Pixels (desktop). Min: 1 |
+| inset_map_size_mobile_pixels | Pixels (mobile). Min: 1 |
+| inset_map_size_desktop_viewport | Screen % (desktop). Min: 1. Max: 100 |
+| inset_map_size_mobile_viewport | Screen % (mobile). Min: 1. Max: 100 |
+| geojson_elevation_enabled | Boolean. Extrude shapes. |
+| geojson_elevation_normalize | Normalize elevation. Allowed values: "none" (No normalization), "both" (Normalize: minimum of 0 and maximum of 1), "top" (Normalize: maximum of 1) |
+| geojson_elevation_scale | Elevation scale. |
+| geojson_stroke_enabled | Boolean. Enable stroke. |
+| geojson_stroke_color | Stroke color. |
+| geojson_fill_enabled | Boolean. Enable fill. |
+| geojson_fill_color | Fallback color. Fill color to use if a color value is missing or invalid for a shape. |
+| geojson_opacity | Shape opacity. Max: 1 |
+
+
+
+
+
+
+## See Also
+ Other Flourish map:  `bind_arc_map_data()`, `bind_choropleth_map_data()`, `bind_connections_globe_data()`, `bind_region_marker_map_data()`, `bind_time_map_data()`, `set_arc_map_details()`, `set_choropleth_map_details()`, `set_connections_globe_details()`, `set_marker_map_details()`, `set_time_map_details()` 
+

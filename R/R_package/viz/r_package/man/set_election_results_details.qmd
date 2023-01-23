@@ -1,0 +1,81 @@
+---
+title: "Set election results details"
+---
+
+*R/details.R*
+
+## set_election_results_details
+
+## Description
+ Set election results details 
+
+
+## Usage
+```r
+ 
+set_election_results_details( 
+  ., 
+  chart_height = NULL, 
+  chart_background = NULL, 
+  use_custom_scale = NULL, 
+  custom_scale_maximum = NULL, 
+  threshold_line_position = NULL, 
+  threshold_line_content = NULL, 
+  threshold_line_text_color = NULL, 
+  threshold_line_dash_offset = NULL, 
+  threshold_line_width = NULL, 
+  threshold_line_color = NULL, 
+  hide_partyname = NULL, 
+  label_font_size = NULL, 
+  label_font_color = NULL, 
+  label_suffix = NULL, 
+  hide_dropdown = NULL, 
+  hide_empty_rows = NULL, 
+  current_id = NULL, 
+  dropdown_label_color = NULL, 
+  legend_position = NULL, 
+  hide_empty_legend_item = NULL, 
+  dropdown_label = NULL, 
+  instruction_label = NULL, 
+  placeholder_text = NULL, 
+  subtitle_text = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| chart_height | Chart height. Min: 0.1 |
+| chart_background | Chart background color. Background color of part of chart that's not filled with data (ie. when filtering parties) |
+| use_custom_scale | Scale type. Boolean (True/False). On default, will use the sum of all data points as the maximum value. Enable this setting to use a custom value |
+| custom_scale_maximum | maximum value for scale. This will set the maximum value of the scale. Eg. the total amount of seats to be won in an election |
+| threshold_line_position | Position. |
+| threshold_line_content | Text. |
+| threshold_line_text_color | Colour. |
+| threshold_line_dash_offset | Dash width and offset. eg. 2,2 |
+| threshold_line_width | Thickness. |
+| threshold_line_color | Colour. |
+| hide_partyname | Boolean (True/False) |
+| label_font_size | Text size. |
+| label_font_color | Text colour. |
+| label_suffix | Historical label suffix. Suffix used to compare current and historical results. For example,"%" when data measures vote shares, or"seats" when data measures seats won. |
+| hide_dropdown | Boolean (True/False) |
+| hide_empty_rows | Boolean (True/False). Hide empty rows in dropdown. |
+| current_id | Default value of dropdown. |
+| dropdown_label_color | Text color. |
+| legend_position | Position. Allowed values: below, above |
+| hide_empty_legend_item | Boolean (True/False) Hide zero-valued entries. |
+| dropdown_label | Text left of dropdown. |
+| instruction_label | Instruction text above legend. |
+| placeholder_text | No data placeholder text. Placeholder text if there is no data |
+| subtitle_text | Text below results. |
+
+
+
+
+
+
+## See Also
+ Other Politics:  `bind_election_results_data()`, `bind_parliament_data()`, `set_parliament_details()` 
+

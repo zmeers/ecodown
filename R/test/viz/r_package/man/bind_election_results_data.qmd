@@ -1,0 +1,45 @@
+---
+title: "Bind Election results data"
+---
+
+*R/bindings.R*
+
+## bind_election_results_data
+
+## Description
+ Bind Election results data 
+
+
+## Usage
+```r
+ 
+bind_election_results_data( 
+  ., 
+  current_election_data = NULL, 
+  current_election_region = NULL, 
+  current_election_results = NULL, 
+  historical_election_data = NULL, 
+  historical_election_region = NULL, 
+  historical_election_results = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| current_election_data | A data frame of current election results |
+| current_election_region | Current election region (e.g. Congressional district or country). |
+| current_election_results | Current Election results. User can include multiple parties by including multiple columns. |
+| historical_election_data | A data frame of current election results |
+| historical_election_region | Historical election region (e.g. Congressional district or country). |
+| historical_election_results | Historical election results. User can include multiple parties by including multiple columns. |
+
+
+
+
+
+
+## See Also
+ Other Politics:  `bind_parliament_data()`, `set_election_results_details()`, `set_parliament_details()` 
+

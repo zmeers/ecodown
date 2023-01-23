@@ -1,0 +1,213 @@
+---
+title: "Creating Flourish graphs in R/Python"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{flourish}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+options(rmarkdown.html_vignette.check_title = FALSE)
+```
+
+```{r setup}
+library(canviz)
+```
+
+Flourish primarily depends on two main functions in R/Python. They are `flourish` and `bind_data`. An R/Python user can specify their preferred chart type and bind data columns to the graph.  A list of Flourish functions can be found by running `canviz::`, typing `?canviz` in your console, or heading over to the references page in this site.
+
+The following code chunks show some example charts using Gapminder data, with my accompanying notes.
+
+The `canviz` package provides the data `flourish_api_documentation` frame with metadata about each graph (template ID, version, a simplified chart name for end users, and a URL to Flourish's API documentation). 
+
+
+```{r}
+head(flourish_api_documentation)
+```
+
+
+`canviz` works by requiring two functions to plot Flourish graphs:
+
+ * `flourish()`:
+    * `data` (optional arg) -- a data frame
+    * `chart_type` (mandatory arg) -- a string that must match a value in `templates$r_chart_type`.
+    * `chart_description` (optional arg) -- a string with the chart description for screen readers.
+    * `height`, `width` (optional args) -- self explanatory
+    * `template_id`, `template_version` (optional args) -- required strings if user doesn't supply `chart_type`
+    * `secret_key` (mandatory arg) -- Flourish API key, defaults to `Sys.getenv("FLOURISH_API_KEY")`
+
+And secondly, a binding data function which performs the same function as in flourish.studio, whereby the user matches data columns to the graph properties. The main function is `bind_data()`, which captures most chart styles. If it doesn't, there will be another function - e.g. for a table, you can run `bind_table_data(columns = ...)`. 
+
+A simple scatter plot is as as follows. If a user wants to add additional details they can by running `set_..._details()`. In this case, `set_scatterplot_details()`. Chart-agnostic functions can be accessed by running `chart_...()` -- for example, to access the X axis arguments, run `chart_x_axis(title = "This is the X axis title")`.  
+
+Each function argument pipes into the other and takes on the additional arguments to the graph. The pipe can be the base pipe `|>` or the maggrittr pipe `%>%`.
+
+# Flourish examples 
+
+## Scatterplot {.tabset}
+
+### R code
+
+```{r scatter}
+
+flourish(
+  data = gapminder,
+  chart_type = "scatter"
+) |>
+  bind_data(
+    x = "gdpPercap",
+    y = "lifeExp",
+    add_to_popup_panel = "country",
+    time_slider = "year",
+    size = "pop",
+    color = "continent"
+  )
+```
+
+### Python code
+
+**Ignore for now**
+
+```{python}
+
+```
+
+
+## Line graph with own color scale {.tabset}
+
+### R code
+
+```{r}
+line_data <- subset(gapminder, country %in% c(
+  "Australia", "New Zealand", "United States", "United Kingdom",
+  "Rwanda", "Sierra Leone", "Indonesia", "Brazil"
+),
+select = c("country", "year", "lifeExp")
+)
+names(line_data)[names(line_data) == "lifeExp"] <- " "
+line_data <- reshape(line_data, direction = "wide", idvar = "year", timevar = "country", sep = "")
+
+flourish(
+  chart_type = "line",
+  data = line_data
+) |>
+  bind_data(
+    x = "year",
+    y = colnames(line_data[, c(2:8)])
+  ) |>
+  chart_color_scale(
+    categorical_custom_color = c(
+      "#440154FF", "#46337EFF", "#365C8DFF",
+      "#277F8EFF", "#1FA187FF", "#4AC16DFF",
+      "#9FDA3AFF"
+    ),
+    categorical_custom_value = colnames(line_data[, c(2:8)])
+  ) |>
+  chart_layout(
+    x_axis_title = "Year",
+    y_axis_title = "Life expectancy"
+  )
+```
+
+### Python code 
+
+**Ignore for now**
+
+```{python}
+
+```
+
+
+## Table {.tabset}
+
+### R code
+
+```{r}
+table_data <- subset(gapminder, country %in% c("Australia", "New Zealand", "United States", "United Kingdom"),
+  select = c("country", "year", "gdpPercap")
+)
+table_data <- reshape(table_data, direction = "wide", idvar = "country", timevar = "year")
+
+
+flourish(chart_type = "table") |>
+  bind_table_data(
+    data = table_data,
+    columns = colnames(table_data)
+  ) |>
+  set_table_details(
+    markdown_enabled = TRUE,
+    line_minichart_columns = colnames(table_data[, c(2:13)]),
+    line_minichart_columns_color = "red",
+    line_minichart_columns_new_column_name = "GDP per capita",
+    line_minichart_columns_area = TRUE
+  )
+```
+
+### Python code 
+
+**Ignore for now**
+
+```{python}
+
+```
+
+## Parliament chart {.tabset}
+
+### R code
+```{r}
+election_data <- data.frame(
+  Party = c("GOP", "Dem"),
+  "Election year 2016" = c(241, 194),
+  "Election year 2014" = c(247, 188),
+  "Election year 2012" = c(234, 201)
+)
+
+names(election_data) <- gsub("[.]", " ", names(election_data))
+
+flourish(
+  chart_type = "parliament",
+  chart_description = "Democrats lost the House of Representatives in 2012 and did not regain power until 2018."
+) |>
+  bind_parliament_data(
+    data = election_data,
+    party = "Party",
+    seats = c(
+      "Election year 2016",
+      "Election year 2014",
+      "Election year 2012"
+    )
+  ) |>
+  set_parliament_details(
+    number_of_seats = 435,
+    number_of_rows = 8
+  ) |>
+  chart_color_scale(
+    scale_type = "categorical",
+    categorical_custom_color = c("red", "blue"),
+    categorical_custom_value = c("GOP", "Dem")
+  ) |>
+  chart_filter_controls(filter_type = "dropdown")
+```
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+### Python code
+
+**Ignore for now**
+
+```{python}
+
+```
+
+<br>
+<br>
+<br>

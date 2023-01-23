@@ -1,0 +1,64 @@
+---
+title: "Gapminder data"
+---
+
+*R/data.R*
+
+## gapminder
+
+## Description
+ A data set containing Gapminder data used for vignettes 
+
+## Format
+
+ A data frame with 1704 rows and 6 variables:  
+
+country
+
+Country name.
+
+ 
+
+continent
+
+Continent name.
+
+ 
+
+year
+
+Year data was collected.
+
+ 
+
+lifeExp
+
+Life expectancy.
+
+ 
+
+pop
+
+Population size.
+
+ 
+
+gdpPercap
+
+GDP per capita.
+
+  
+
+## Usage
+```r
+ 
+gapminder 
+```
+
+
+
+
+
+
+
+

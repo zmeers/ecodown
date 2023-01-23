@@ -1,0 +1,506 @@
+---
+title: "Set Flourish chart layout"
+---
+
+*R/chart.R*
+
+## chart_layout
+
+## Description
+ Set Flourish chart layout 
+
+
+## Usage
+```r
+ 
+chart_layout( 
+  ., 
+  body_font = NULL, 
+  body_font_color = NULL, 
+  background_color = NULL, 
+  background_image_source = NULL, 
+  background_image_size = NULL, 
+  background_image_position = NULL, 
+  max_width = NULL, 
+  max_width_target = NULL, 
+  max_width_align = NULL, 
+  layout_order = NULL, 
+  space_between_sections = NULL, 
+  space_between_sections_custom = NULL, 
+  margin = NULL, 
+  margin_top = NULL, 
+  margin_right = NULL, 
+  margin_bottom = NULL, 
+  margin_left = NULL, 
+  border_width = NULL, 
+  border_style = NULL, 
+  border_color = NULL, 
+  border_top_width = NULL, 
+  border_top_style = NULL, 
+  border_top_color = NULL, 
+  border_left_width = NULL, 
+  border_left_style = NULL, 
+  border_left_color = NULL, 
+  border_bottom_width = NULL, 
+  border_bottom_style = NULL, 
+  border_bottom_color = NULL, 
+  border_right_width = NULL, 
+  border_right_style = NULL, 
+  border_right_color = NULL, 
+  x_axis_position = NULL, 
+  x_axis_position_on_y_axis = NULL, 
+  x_axis_scale_type = NULL, 
+  x_axis_min = NULL, 
+  x_axis_max = NULL, 
+  x_axis_flip = NULL, 
+  x_axis_scale_settings = NULL, 
+  x_axis_pretty_format = NULL, 
+  x_axis_show_zero = NULL, 
+  x_axis_title = NULL, 
+  x_axis_title_weight = NULL, 
+  x_axis_title_color = NULL, 
+  x_axis_title_size = NULL, 
+  x_axis_title_padding = NULL, 
+  x_axis_text_position = NULL, 
+  x_axis_text_size = NULL, 
+  x_axis_text_color = NULL, 
+  x_axis_text_angle = NULL, 
+  x_axis_text_weight = NULL, 
+  x_axis_text_max_lines = NULL, 
+  x_axis_text_line_height = NULL, 
+  x_axis_text_space_mode = NULL, 
+  x_axis_text_space = NULL, 
+  x_axis_tick_padding = NULL, 
+  x_axis_tick_mode = NULL, 
+  x_axis_tick_number = NULL, 
+  x_axis_tick_custom = NULL, 
+  x_axis_line_tick_color = NULL, 
+  x_axis_line_tick_width = NULL, 
+  x_axis_tick_length = NULL, 
+  x_axis_tick_side = NULL, 
+  x_axis_line_show = NULL, 
+  x_axis_edge_padding = NULL, 
+  x_axis_gridline_show = NULL, 
+  x_axis_gridline_color = NULL, 
+  x_axis_gridline_style = NULL, 
+  x_axis_gridline_width = NULL, 
+  x_axis_gridline_category_dividers = NULL, 
+  x_axis_gridline_category_dividers_extend = NULL, 
+  y_axis_show = NULL, 
+  y_axis_position = NULL, 
+  y_axis_scale_type = NULL, 
+  y_axis_min = NULL, 
+  y_axis_max = NULL, 
+  y_axis_flip = NULL, 
+  y_axis_scale_settings = NULL, 
+  y_axis_pretty_format = NULL, 
+  y_axis_show_zero = NULL, 
+  y_axis_title = NULL, 
+  y_axis_title_weight = NULL, 
+  y_axis_title_color = NULL, 
+  y_axis_title_size = NULL, 
+  y_axis_title_padding = NULL, 
+  y_axis_text_position = NULL, 
+  y_axis_text_size = NULL, 
+  y_axis_text_color = NULL, 
+  y_axis_text_angle = NULL, 
+  y_axis_text_weight = NULL, 
+  y_axis_text_max_lines = NULL, 
+  y_axis_text_line_height = NULL, 
+  y_axis_text_space_mode = NULL, 
+  y_axis_text_space = NULL, 
+  y_axis_tick_padding = NULL, 
+  y_axis_tick_mode = NULL, 
+  y_axis_tick_number = NULL, 
+  y_axis_tick_custom = NULL, 
+  y_axis_line_tick_color = NULL, 
+  y_axis_line_tick_width = NULL, 
+  y_axis_tick_length = NULL, 
+  y_axis_tick_side = NULL, 
+  y_axis_line_show = NULL, 
+  y_axis_edge_padding = NULL, 
+  y_axis_gridline_show = NULL, 
+  y_axis_gridline_color = NULL, 
+  y_axis_gridline_style = NULL, 
+  y_axis_gridline_width = NULL, 
+  y_axis_gridline_category_dividers = NULL, 
+  y_axis_gridline_category_dividers_extend = NULL, 
+  secondary_y_axis_show = NULL, 
+  secondary_y_axis_position = NULL, 
+  secondary_y_axis_scale_type = NULL, 
+  secondary_y_axis_min = NULL, 
+  secondary_y_axis_max = NULL, 
+  secondary_y_axis_flip = NULL, 
+  secondary_y_axis_scale_settings = NULL, 
+  secondary_y_axis_pretty_format = NULL, 
+  secondary_y_axis_show_zero = NULL, 
+  secondary_y_axis_title = NULL, 
+  secondary_y_axis_title_weight = NULL, 
+  secondary_y_axis_title_color = NULL, 
+  secondary_y_axis_title_size = NULL, 
+  secondary_y_axis_title_padding = NULL, 
+  secondary_y_axis_text_position = NULL, 
+  secondary_y_axis_text_size = NULL, 
+  secondary_y_axis_text_color = NULL, 
+  secondary_y_axis_text_angle = NULL, 
+  secondary_y_axis_text_weight = NULL, 
+  secondary_y_axis_text_max_lines = NULL, 
+  secondary_y_axis_text_line_height = NULL, 
+  secondary_y_axis_text_space_mode = NULL, 
+  secondary_y_axis_text_space = NULL, 
+  secondary_y_axis_tick_padding = NULL, 
+  secondary_y_axis_tick_mode = NULL, 
+  secondary_y_axis_tick_number = NULL, 
+  secondary_y_axis_tick_custom = NULL, 
+  secondary_y_axis_line_tick_color = NULL, 
+  secondary_y_axis_line_tick_width = NULL, 
+  secondary_y_axis_tick_length = NULL, 
+  secondary_y_axis_tick_side = NULL, 
+  secondary_y_axis_line_show = NULL, 
+  secondary_y_axis_edge_padding = NULL, 
+  secondary_y_axis_gridline_show = NULL, 
+  secondary_y_axis_gridline_color = NULL, 
+  secondary_y_axis_gridline_style = NULL, 
+  secondary_y_axis_gridline_width = NULL, 
+  secondary_y_axis_gridline_category_dividers = NULL, 
+  secondary_y_axis_gridline_category_dividers_extend = NULL, 
+  header_align = NULL, 
+  title = NULL, 
+  title_font = NULL, 
+  title_size = NULL, 
+  title_size_custom = NULL, 
+  title_weight = NULL, 
+  title_color = NULL, 
+  title_line_height = NULL, 
+  title_space_above = NULL, 
+  title_space_above_custom = NULL, 
+  subtitle = NULL, 
+  subtitle_font = NULL, 
+  subtitle_size = NULL, 
+  subtitle_size_custom = NULL, 
+  subtitle_weight = NULL, 
+  subtitle_color = NULL, 
+  subtitle_line_height = NULL, 
+  subtitle_space_above = NULL, 
+  subtitle_space_above_custom = NULL, 
+  header_text = NULL, 
+  header_text_font = NULL, 
+  header_text_size = NULL, 
+  header_text_size_custom = NULL, 
+  header_text_weight = NULL, 
+  header_text_color = NULL, 
+  header_text_line_height = NULL, 
+  header_text_space_above = NULL, 
+  header_text_space_above_custom = NULL, 
+  header_border = NULL, 
+  header_border_width = NULL, 
+  header_border_color = NULL, 
+  header_border_style = NULL, 
+  header_border_space = NULL, 
+  header_logo_source = NULL, 
+  header_logo_height = NULL, 
+  header_logo_align = NULL, 
+  header_logo_position_inside = NULL, 
+  header_logo_position_outside = NULL, 
+  header_logo_margin_top = NULL, 
+  header_logo_margin_right = NULL, 
+  header_logo_margin_bottom = NULL, 
+  header_logo_margin_left = NULL, 
+  footer_align = NULL, 
+  footer_text_size = NULL, 
+  footer_text_color = NULL, 
+  footer_font = NULL, 
+  footer_font_weight = NULL, 
+  footer_multiple_sources = NULL, 
+  footer_source_name_1 = NULL, 
+  footer_source_url_1 = NULL, 
+  footer_source_name_2 = NULL, 
+  footer_source_url_2 = NULL, 
+  footer_source_name_3 = NULL, 
+  footer_source_url_3 = NULL, 
+  footer_source_label = NULL, 
+  footer_note = NULL, 
+  footer_note_secondary = NULL, 
+  footer_border = NULL, 
+  footer_border_width = NULL, 
+  footer_border_color = NULL, 
+  footer_border_style = NULL, 
+  footer_border_space = NULL, 
+  footer_logo_source = NULL, 
+  footer_logo_source_light = NULL, 
+  footer_logo_height = NULL, 
+  footer_logo_align_vertical = NULL, 
+  footer_logo_align_horizontal = NULL, 
+  footer_logo_margin = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| body_font | Main font. Flourish options: c("Open Sans", "Source Sans Pro", "Roboto Condensed", "Merriweather", "Lora", "Playfair Display", "Coda", "Lobster", "Cabin Sketch"). This font will apply to the whole graphic by default, but you can optionally change the font for the title, subtitle, footer, etc in the Header and Footer settings panels. |
+| body_font_color | Text color. This color will apply to the whole graphic by default, but you can optionally change the color for individual text elements, in other settings panels. |
+| background_color | Background color. |
+| background_image_source | Image URL |
+| background_image_size | Image size. Allowed strings: c("cover", "contain", "auto", "100% 100%"), |
+| background_image_position | Image position. Allowed strings: c("top left", "top center", "top right",  "center left", "center right", "bottom left", "bottom center", "bottom right"), |
+| max_width | Maximum width of container. Defaults to HTML element width if left blank. Min value: 50 |
+| max_width_target | Maximum width. Apply a maximum width to just the main graphic or everything (main graphic plus header, footer, etc). Allowed strings: c("none", "wrapper", "primary", NULL), |
+| max_width_align | Alignment of container. Allowed strings: c("left", "center", "right") |
+| layout_order | Order of chart elements. Allowed strings: c("stack-default", "stack-2", "stack-3", "stack-4") |
+| space_between_sections | Space between axes elements. Allowed numeric values: c(0.5, 1, 1.5), |
+| space_between_sections_custom | Set custom space between axes elements. Max value: 100 |
+| margin | Margin value |
+| margin_top | Margin top numeric value |
+| margin_right | Margin right numeric value |
+| margin_bottom | Margin bottom numeric value |
+| margin_left | Margin left numeric value |
+| border_width | Border width numeric value |
+| border_style | Border style. Allowed strings = c("solid", "dashed", "dotted") |
+| border_color | Border color (hex code string) |
+| border_top_width | Border top width numeric value |
+| border_top_style | Border top style. Allowed strings = c("solid", "dashed", "dotted") |
+| border_top_color | Border top color (hex code string) |
+| border_left_width | Border left width numeric value |
+| border_left_style | Border left style. Allowed strings = c("solid", "dashed", "dotted") |
+| border_left_color | Border left color (hex code string) |
+| border_bottom_width | Border bottom width numeric value |
+| border_bottom_style | Border bottom style. Allowed strings = c("solid", "dashed", "dotted") |
+| border_bottom_color | Border bottom color (hex code string) |
+| border_right_width | Border right width numeric value |
+| border_right_style | Border right style. Allowed strings = c("solid", "dashed", "dotted") |
+| border_right_color | Border right color (hex code string) |
+| x_axis_position | X axis position ("bottom", "float-below" "float-above", "top", "off") |
+| x_axis_position_on_y_axis | X axis position on the Y axis (enew_list. X intersects Y at zero...) |
+| x_axis_scale_type | Log, linear or date |
+| x_axis_min | X axis minimum value |
+| x_axis_max | X axis maximum value |
+| x_axis_flip | Flip X and Y axes |
+| x_axis_scale_settings | Configure minimum and maximum values |
+| x_axis_pretty_format | Pretty format X axis |
+| x_axis_show_zero | Show zero on the X axis |
+| x_axis_title | X axis title |
+| x_axis_title_weight | X axis title weight ("bold", "normal") |
+| x_axis_title_color | X axis title color |
+| x_axis_title_size | X axis title size (starts from 0, usually a number between 1 and 3 is a good choice) |
+| x_axis_title_padding | X axis passing |
+| x_axis_text_position | X axis text position ("default", "left", "right") |
+| x_axis_text_size | X axis text size (starts from 0, usually a number between 1 and 3 is a good choice) |
+| x_axis_text_color | X axis text color |
+| x_axis_text_angle | X axis text angle (0, 30, 45, 60, 90) |
+| x_axis_text_weight | X axis text weight ("bold", "normal") |
+| x_axis_text_max_lines | Maximum number of lines on X axis |
+| x_axis_text_line_height | X axis line height |
+| x_axis_text_space_mode | X axis space mode ("auto", "maxed", "fixed") |
+| x_axis_text_space | X axis space |
+| x_axis_tick_padding | X axis tick padding |
+| x_axis_tick_mode | X axis tick mode ("auto", "number", "custom") |
+| x_axis_tick_number | Approximate number of ticks or gridlines. The actual number will depend on the range of values, chart size, etc. |
+| x_axis_tick_custom | One tick label per line. Specify the ticks to show, one per line |
+| x_axis_line_tick_color | X axis line color |
+| x_axis_line_tick_width | X axis line width |
+| x_axis_tick_length | X axis tick length |
+| x_axis_tick_side | X axis tick side ("in", "out") |
+| x_axis_line_show | X axis visible |
+| x_axis_edge_padding | Edge padding (%). Space between start/end of axis line and first/last category tick as a percentage of the spacing between ticks. Max: 100 |
+| x_axis_gridline_show | Boolean (True/False) |
+| x_axis_gridline_color | Gridline color |
+| x_axis_gridline_style | Gridline style ("solid", "dash", "dot", "dot_dash") |
+| x_axis_gridline_width | Gridline width |
+| x_axis_gridline_category_dividers | Put lines between categories. On a categorical axis this option disables the gridline on each tick and instead adds rules between each category to give a table-like design. Ignored for date and numeric axes. |
+| x_axis_gridline_category_dividers_extend | Extend. Extends the dividers into the axis margins. |
+| y_axis_show | Y axis show or hide. Boolean (True/False) |
+| y_axis_position | Y axis position ("bottom", "float-below" "float-above", "top", "off") |
+| y_axis_scale_type | Log, linear or date |
+| y_axis_min | Y axis minimum value |
+| y_axis_max | Y axis maximum value |
+| y_axis_flip | Flip X and Y axes |
+| y_axis_scale_settings | Configure minimum and maximum values |
+| y_axis_pretty_format | Pretty format Y axis |
+| y_axis_show_zero | Show zero on the Y axis |
+| y_axis_title | Y axis title |
+| y_axis_title_weight | Y axis title weight ("bold", "normal") |
+| y_axis_title_color | Y axis title color |
+| y_axis_title_size | Y axis title size (starts from 0, usually a number between 1 and 3 is a good choice) |
+| y_axis_title_padding | Y axis passing |
+| y_axis_text_position | Y axis text position ("default", "left", "right") |
+| y_axis_text_size | Y axis text size (starts from 0, usually a number between 1 and 3 is a good choice) |
+| y_axis_text_color | Y axis text color |
+| y_axis_text_angle | Y axis text angle (0, 30, 45, 60, 90) |
+| y_axis_text_weight | Y axis text weight ("bold", "normal") |
+| y_axis_text_max_lines | Maximum number of lines on Y axis |
+| y_axis_text_line_height | Y axis line height |
+| y_axis_text_space_mode | Y axis space mode ("auto", "maxed", "fixed") |
+| y_axis_text_space | Y axis space |
+| y_axis_tick_padding | Y axis tick padding |
+| y_axis_tick_mode | Y axis tick mode ("auto", "number", "custom") |
+| y_axis_tick_number | Approximate number of ticks or gridlines. The actual number will depend on the range of values, chart size, etc. |
+| y_axis_tick_custom | One tick label per line. Specify the ticks to show, one per line |
+| y_axis_line_tick_color | Y axis line color |
+| y_axis_line_tick_width | Y axis line width |
+| y_axis_tick_length | Y axis tick length |
+| y_axis_tick_side | Y axis tick side ("in", "out") |
+| y_axis_line_show | Y axis visible |
+| y_axis_edge_padding | Edge padding (%). Space between start/end of axis line and first/last category tick as a percentage of the spacing between ticks. Max: 100 |
+| y_axis_gridline_show | Boolean (True/False) |
+| y_axis_gridline_color | Gridline color |
+| y_axis_gridline_style | Gridline style ("solid", "dash", "dot", "dot_dash") |
+| y_axis_gridline_width | Gridline width |
+| y_axis_gridline_category_dividers | Put lines between categories. On a categorical axis this option disables the gridline on each tick and instead adds rules between each category to give a table-like design. Ignored for date and numeric axes. |
+| y_axis_gridline_category_dividers_extend | Extend. Extends the dividers into the axis margins. |
+| secondary_y_axis_show | Secondary Y axis show or hide. Boolean (True/False) |
+| secondary_y_axis_position | Secondary Y axis position ("bottom", "float-below" "float-above", "top", "off") |
+| secondary_y_axis_scale_type | Log, linear or date |
+| secondary_y_axis_min | Secondary Y axis minimum value |
+| secondary_y_axis_max | Secondary Y axis maximum value |
+| secondary_y_axis_flip | Flip Secondary Y and X axes |
+| secondary_y_axis_scale_settings | Configure minimum and maximum values |
+| secondary_y_axis_pretty_format | Pretty format Secondary Y axis |
+| secondary_y_axis_show_zero | Show zero on the Secondary Y axis |
+| secondary_y_axis_title | Secondary Y axis title |
+| secondary_y_axis_title_weight | Secondary Y axis title weight ("bold", "normal") |
+| secondary_y_axis_title_color | Secondary Y axis title color |
+| secondary_y_axis_title_size | Secondary Y axis title size (starts from 0, usually a number between 1 and 3 is a good choice) |
+| secondary_y_axis_title_padding | Secondary Y axis passing |
+| secondary_y_axis_text_position | Secondary Y axis text position ("default", "left", "right") |
+| secondary_y_axis_text_size | Secondary Y axis text size (starts from 0, usually a number between 1 and 3 is a good choice) |
+| secondary_y_axis_text_color | Secondary Y axis text color |
+| secondary_y_axis_text_angle | Secondary Y axis text angle (0, 30, 45, 60, 90) |
+| secondary_y_axis_text_weight | Secondary Y axis text weight ("bold", "normal") |
+| secondary_y_axis_text_max_lines | Maximum number of lines on Secondary Y axis |
+| secondary_y_axis_text_line_height | Secondary Y axis line height |
+| secondary_y_axis_text_space_mode | Secondary Y axis space mode ("auto", "maxed", "fixed") |
+| secondary_y_axis_text_space | Secondary Y axis space |
+| secondary_y_axis_tick_padding | Secondary Y axis tick padding |
+| secondary_y_axis_tick_mode | Secondary Y axis tick mode ("auto", "number", "custom") |
+| secondary_y_axis_tick_number | Approximate number of ticks or gridlines. The actual number will depend on the range of values, chart size, etc. |
+| secondary_y_axis_tick_custom | One tick label per line. Specify the ticks to show, one per line |
+| secondary_y_axis_line_tick_color | Secondary Y axis line color |
+| secondary_y_axis_line_tick_width | Secondary Y axis line width |
+| secondary_y_axis_tick_length | Secondary Y axis tick length |
+| secondary_y_axis_tick_side | Secondary Y axis tick side ("in", "out") |
+| secondary_y_axis_line_show | Secondary Y axis visible |
+| secondary_y_axis_edge_padding | Edge padding (%). Space between start/end of axis line and first/last category tick as a percentage of the spacing between ticks. Max: 100 |
+| secondary_y_axis_gridline_show | Boolean (True/False) |
+| secondary_y_axis_gridline_color | Gridline color |
+| secondary_y_axis_gridline_style | Gridline style ("solid", "dash", "dot", "dot_dash") |
+| secondary_y_axis_gridline_width | Gridline width |
+| secondary_y_axis_gridline_category_dividers | Put lines between categories. On a categorical axis this option disables the gridline on each tick and instead adds rules between each category to give a table-like design. Ignored for date and numeric axes. |
+| secondary_y_axis_gridline_category_dividers_extend | Extend. Extends the dividers into the axis margins. |
+| header_align | Header alignment ("left", "center", "right") |
+| title | Title text |
+| title_font | Title font face |
+| title_size | Title size - 1.4, 1.6, 2 |
+| title_size_custom | Title size custom |
+| title_weight | Title weight - "bold", "normal" |
+| title_color | Title color |
+| title_line_height | Title line height |
+| title_space_above | Title space above (0, 0.5, 1) |
+| title_space_above_custom | Title space above (custom number) |
+| subtitle | Subtitle text |
+| subtitle_font | Subtitle font face |
+| subtitle_size | Subtitle size - 1.4, 1.6, 2 |
+| subtitle_size_custom | Subtitle size custom |
+| subtitle_weight | Subtitle weight - "bold", "normal" |
+| subtitle_color | Subtitle color |
+| subtitle_line_height | Subtitle text line height |
+| subtitle_space_above | Space above subtitle text (0, 0.5, 1) |
+| subtitle_space_above_custom | Space above subtitle text (custom number) |
+| header_text | Header text |
+| header_text_font | Header text font |
+| header_text_size | Header text size (1.2, 1.4, 1.6) |
+| header_text_size_custom | Header text size - custom number |
+| header_text_weight | Header text weight - "bold", "normal" |
+| header_text_color | Header text color |
+| header_text_line_height | Header text line height |
+| header_text_space_above | Space above header text (0, 0.5, 1) |
+| header_text_space_above_custom | Space above header text (custom number) |
+| header_border | "Top", "bottom", or "none" |
+| header_border_width | Header border width |
+| header_border_color | Header border color |
+| header_border_style | Header border style |
+| header_border_space | Header border space |
+| header_logo_source | Header logo source |
+| header_logo_height | Header logo height |
+| header_logo_align | Align header and logo |
+| header_logo_position_inside | Logo margin - inside chart |
+| header_logo_position_outside | Logo margin - outside chart |
+| header_logo_margin_top | Login margin - top |
+| header_logo_margin_right | Logo margin - right |
+| header_logo_margin_bottom | Logo margin - bottom |
+| header_logo_margin_left | Logo margin - left |
+| footer_align | Footer alignment - "left", "center", "right" |
+| footer_text_size | Footer text size |
+| footer_text_color | Footer text color |
+| footer_font | Footer font face |
+| footer_font_weight | Footer font weight - "bold", "normal" |
+| footer_multiple_sources | Boolean (True/False) for multiple sources |
+| footer_source_name_1 | Footer source name 1 |
+| footer_source_url_1 | Footer source URL 1 |
+| footer_source_name_2 | Footer source name 1 |
+| footer_source_url_2 | Footer source URL 2 |
+| footer_source_name_3 | Footer source name 2 |
+| footer_source_url_3 | Footer source URL 3 |
+| footer_source_label | Footer source label |
+| footer_note | Footer note |
+| footer_note_secondary | Footer secondary note |
+| footer_border | Border - "top", "bottom", "none |
+| footer_border_width | Border width |
+| footer_border_color | Border color |
+| footer_border_style | Border style - "solid", "dashed", "dotted" |
+| footer_border_space | Space between border and footer text |
+| footer_logo_source | URL source |
+| footer_logo_source_light | URL source to use with a dark background (light logo) |
+| footer_logo_height | Logo height |
+| footer_logo_align_vertical | Footer alignment - "flex-start", "center", "flex-end" |
+| footer_logo_align_horizontal | Footer alignment - "left", "right" |
+| footer_logo_margin | Logo margin |
+
+
+## Section
+
+## Fonts
+
+ NA 
+
+## Background
+
+ NA 
+
+## Layouts
+
+ NA 
+
+## Margin
+
+ NA 
+
+## Border
+
+ NA 
+
+## X Axis
+
+ NA 
+
+## Y axis
+
+ NA 
+
+## Dual Y axis
+
+ NA 
+
+## header
+
+ NA 
+
+## footer
+
+ NA 
+
+
+
+
+

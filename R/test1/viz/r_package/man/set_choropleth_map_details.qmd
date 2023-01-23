@@ -1,0 +1,205 @@
+---
+title: "Set choropleth map details"
+---
+
+*R/details.R*
+
+## set_choropleth_map_details
+
+## Description
+ Set choropleth map details 
+
+
+## Usage
+```r
+ 
+set_choropleth_map_details( 
+  ., 
+  projection = NULL, 
+  fit = NULL, 
+  centering = NULL, 
+  min_area = NULL, 
+  include_lines = NULL, 
+  longitude = NULL, 
+  latitude = NULL, 
+  roll = NULL, 
+  padding = NULL, 
+  zoom = NULL, 
+  aspect = NULL, 
+  map_show = NULL, 
+  map_fill = NULL, 
+  map_fill_opacity = NULL, 
+  map_show_stroke = NULL, 
+  map_stroke = NULL, 
+  map_stroke_width = NULL, 
+  map_highlight_stroke_inner = NULL, 
+  choropleth_scale_per_column = NULL, 
+  choropleth_missing_values = NULL, 
+  missing_pattern_opacity = NULL, 
+  missing_pattern_size = NULL, 
+  missing_pattern_color_1 = NULL, 
+  missing_pattern_color_2 = NULL, 
+  map_shadow = NULL, 
+  map_shadow_offset_x = NULL, 
+  map_shadow_offset_y = NULL, 
+  map_shadow_blur = NULL, 
+  map_shadow_color = NULL, 
+  map_shadow_opacity = NULL, 
+  point_show = NULL, 
+  point_min_radius = NULL, 
+  point_max_radius = NULL, 
+  point_max_value = NULL, 
+  point_default_radius = NULL, 
+  point_opacity = NULL, 
+  point_fill = NULL, 
+  point_stroke_width = NULL, 
+  point_stroke_opacity = NULL, 
+  point_stroke_custom = NULL, 
+  point_stroke_color = NULL, 
+  point_scale_per_column = NULL, 
+  point_highlight_stroke_inner = NULL, 
+  point_highlight_stroke_outer = NULL, 
+  point_highlight_stroke_width = NULL, 
+  point_highlight_fill_opacity = NULL, 
+  point_highlight_fill_custom = NULL, 
+  point_highlight_fill = NULL, 
+  point_sort = NULL, 
+  line_above_highlights = NULL, 
+  line_stroke_color = NULL, 
+  line_stroke_color_overrides = NULL, 
+  line_stroke_width = NULL, 
+  line_stroke_width_overrides = NULL, 
+  line_stroke_opacity = NULL, 
+  line_stroke_opacity_overrides = NULL, 
+  line_stroke_dash = NULL, 
+  line_stroke_dash_overrides = NULL, 
+  graticule_show = NULL, 
+  graticule_color = NULL, 
+  graticule_width = NULL, 
+  graticule_opacity = NULL, 
+  graticule_separation_longitude = NULL, 
+  graticule_separation_latitude = NULL, 
+  globe_show = NULL, 
+  globe_color = NULL, 
+  point_search = NULL, 
+  map_search = NULL, 
+  search_box_size = NULL, 
+  search_box_width = NULL, 
+  search_bg_color = NULL, 
+  search_bg_opacity = NULL, 
+  search_box_stroke = NULL, 
+  search_text_color = NULL, 
+  search_icon_color = NULL, 
+  search_box_radius = NULL, 
+  search_placeholder = NULL, 
+  search_dropdown = NULL, 
+  search_expanded = NULL, 
+  zoom_on = NULL, 
+  zoom_animation_duration = NULL, 
+  zoom_scaling_mode = NULL, 
+  zoom_message_key = NULL, 
+  zoom_message_touch = NULL, 
+  zoom_message_fill = NULL, 
+  zoom_message_stroke = NULL 
+) 
+```
+
+## Arguments
+|Arguments|Description|
+|---|---|
+| . | The prior Flourish object. No need to specify name if piping graph as the graph will take the first argument (i.e. the prior existing graph). |
+| projection | string Projection. Allowed values: Albers (30° & 45°), Albers USA, August, Azimuthal Equidistant, Aitoff, Baker, Boggs, Braun's Stereographic, Bromley, Craster Parabolic, Eckert I, Eckert II, Eckert III, Eckert IV, Eckert V, Eckert VI, Eisenlohr, Equirectangular, Fahey, Foucaut, Ginzburg IV, Ginzburg V, Ginzburg VI, Ginzburg VIII, Ginzburg IX, Gnomonic, Hammer, Kavrayskiy VII, McBryde-Thomas Flat-Polar Parabolic, McBryde-Thomas Flat-Polar Quartic, McBryde-Thomas Flat-Polar Sinusoidal, Miller (modified Mercator), Mollweide, Natural Earth I, Natural Earth II, Orthographic, Portugal composite, Robinson, Sinusoidal, Spain composite, Stereographic, Wagner IV, Wagner VI, Winkel Tripel |
+| fit | string Bounds. Allowed values: map (Auto), world (World), advanced (Advanced) |
+| centering | string Allowed values: rotate (Rotate projection), center (Translate map) |
+| min_area | number Minimum area. In km². Polygons representing areas below this size won't be considered when fitting the map. Setting is ignored if no polygons are bigger than the specified minimum area. |
+| include_lines | boolean Include lines data. Include lines when calculating the bounds of the map. Allowed values:true (Yes), false (No) |
+| longitude | number Centre longitude |
+| latitude | number Centre latitude |
+| roll | number Rotation. |
+| padding | number Padding (%). Padding added to map (as percentage of smaller of width and height) Max: 10 |
+| zoom | number Zoom. 1 to show whole world, > 1 to zoom in. |
+| aspect | number Aspect ratio. Width divided by height. If left blank will use aspect ratio of projection for whole world. |
+| map_show | boolean Allowed values:true (Enabled), false (Disabled) |
+| map_fill | color Fill. Ignored for regions with values. |
+| map_fill_opacity | number Fill opacity. Max: 1 |
+| map_show_stroke | boolean Allowed values: true (On), false (Off) |
+| map_stroke | color Color. |
+| map_stroke_width | number Width.Max: 5 map_stroke_opacity  number Opacity. Max: 1 |
+| map_highlight_stroke_inner | color Inner stroke. map_highlight_stroke_outer  color Outer stroke. map_highlight_stroke_width  number Stroke width. Max: 5 |
+| choropleth_scale_per_column | boolean Base default scale on:. Determines whether or not to update the default color scale when switching between Value columns. Note that any non-default scale settings (such as custom bin thresholds) will always apply across all columns. Allowed values:false (All columns), true (Current column) |
+| choropleth_missing_values | string Action. Allowed values: fill (Use Fill color), transparent (Make region transparent), hide (Hide region), pattern (Use a pattern) |
+| missing_pattern_opacity | number Opacity. This value is multiplied by the Fill opacity value. Max: 1 |
+| missing_pattern_size | number Square size. Min: 1. Max: 20 |
+| missing_pattern_color_1 | color color 1. |
+| missing_pattern_color_2 | color color 2. |
+| map_shadow | boolean Add shadow. |
+| map_shadow_offset_x | number Horizontal offset. |
+| map_shadow_offset_y | number Vertical offset. |
+| map_shadow_blur | number Blur. |
+| map_shadow_color | color color. |
+| map_shadow_opacity | number Opacity. Max: 1 |
+| point_show | boolean Allowed values: true (Enabled), false (Disabled) |
+| point_min_radius | number Minimum radius. Any smaller circles will be scaled up to the specified level. (Ignored if greater than the "Maximum radius" setting.) |
+| point_max_radius | number Maximum radius. |
+| point_max_value | number Maximum value. Values bigger than this maximum will have a radius equal to the maximum radius. Leave blank to use the maximum in the dataset |
+| point_default_radius | number Radius. |
+| point_opacity | number Fill opacity. Max: 1 |
+| point_fill | color Default fill. |
+| point_stroke_width | number Stroke width. |
+| point_stroke_opacity | number Stroke opacity. Max: 1 |
+| point_stroke_custom | boolean Custom stroke. |
+| point_stroke_color | color Stroke color. |
+| point_scale_per_column | boolean Base default scale on:. Determines whether or not to update the default size scale when switching between Value columns. Allowed values: false (All columns), true (Current column) |
+| point_highlight_stroke_inner | color Inner stroke. |
+| point_highlight_stroke_outer | color Outer stroke. |
+| point_highlight_stroke_width | number Stroke width. |
+| point_highlight_fill_opacity | number Fill opacity. Max: 1 |
+| point_highlight_fill_custom | boolean Custom fill. |
+| point_highlight_fill | color Fill color. |
+| point_sort | boolean Place smaller points above. If checked the smallest points are drawn last so they're always visible and hoverable. If not checked then points at the top of the data sheet are drawn first |
+| line_above_highlights | boolean Layer position. Allowed values: false (Below region highlights), true (Above region highlights) |
+| line_stroke_color | color Default. |
+| line_stroke_color_overrides | text Overrides. Type the name of the series whose color you want to set, a colon and then a color (using a name, hex-code or rgb declaration). Multiple colors can be set using multiple lines. For example: c("Rivers: blue", "Borders: #444444") |
+| line_stroke_width | number Default. Max: 5 |
+| line_stroke_width_overrides | text Overrides. Type the name of the series whose width you want to set, a colon and then a number between 0 and 5. Multiple widths can be set using multiple lines. For example: c("Rivers: 0.5", "Borders: 2") |
+| line_stroke_opacity | number Default. Max: 1 |
+| line_stroke_opacity_overrides | text Overrides. Type the name of the series whose opacity you want to set, a colon and then a number between 0 and 1. Multiple opacities can be set using multiple lines. For example: c("Rivers: 0.5", "Borders: 1") |
+| line_stroke_dash | string Default. Allowed values: solid, long, short, mixed |
+| line_stroke_dash_overrides | text Overrides. Type the name of the series whose line-dash style you want to set, a colon and then a line-dash style ("solid", "long", "short" or "mixed"). Multiple line-dash styles can be set using multiple lines. For example: c("Rivers: solid", "Borders: long") |
+| graticule_show | boolean Graticule layer. Allowed values: true (Enabled), false (Disabled) |
+| graticule_color | color color. |
+| graticule_width | number Width. Max: 5 |
+| graticule_opacity | number Opacity. Max: 1 |
+| graticule_separation_longitude | number Longitude separation (°). Min: 1. Max: 180 |
+| graticule_separation_latitude | number Latitude separation (°). Min: 1. Max: 90 |
+| globe_show | boolean Globe layer. Allowed values: true (Enabled), false (Disabled) |
+| globe_color | color Globe color. |
+| point_search | boolean Enable search for points. |
+| map_search | boolean Enable search for regions. |
+| search_box_size | number Box size. Max: 5 |
+| search_box_width | number Bar width. Width of the search bar when expanded. Max: 40 |
+| search_bg_color | color Background. |
+| search_bg_opacity | number Opacity. Max: 1 |
+| search_box_stroke | number Stroke. Strongness of stroke color. Max: 1 |
+| search_text_color | color Text color. |
+| search_icon_color | color Icon color. |
+| search_box_radius | number Roundness. |
+| search_placeholder | string Placeholder text. The text to show when the search field is empty |
+| search_dropdown | boolean Always show dropdown suggestions. If disabled it will only show suggestions after typing 2 characters |
+| search_expanded | boolean Always expand searchbox. |
+| zoom_on | boolean Allowed values: true (Enabled), false (Disabled) |
+| zoom_animation_duration | number Animation duration (in seconds). Used when changing slides in stories. Max: 10 |
+| zoom_scaling_mode | string Scaling of points and outlines. Allowed values: linear (With zoom), sqrt (Compromise), off (Don't scale) |
+| zoom_message_key | string Zoom message (key). KEY   is a special name that will be replaced by 'Ctrl' on Windows and 'shift-command' on Apple computers |
+| zoom_message_touch | string Zoom message (touch). |
+| zoom_message_fill | color Fill color. |
+| zoom_message_stroke | color Stroke color. |
+
+
+
+
+
+
+## See Also
+ Other Flourish map:  `bind_arc_map_data()`, `bind_choropleth_map_data()`, `bind_connections_globe_data()`, `bind_region_marker_map_data()`, `bind_time_map_data()`, `set_arc_map_details()`, `set_connections_globe_details()`, `set_marker_map_details()`, `set_region_map_details()`, `set_time_map_details()` 
+

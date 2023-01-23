@@ -125,6 +125,7 @@ ecodown_convert <- function(package_source_folder = "",
     pkg = pkg,
     base_folder = qfs,
     reference_folder = reference_folder,
+    build_parent_and_child_reference_pages = build_parent_and_child_reference_pages,
     r_reference_folder = r_reference_folder,
     vignettes_folder = vignettes_folder,
     examples = reference_examples,
@@ -137,7 +138,11 @@ ecodown_convert <- function(package_source_folder = "",
   get_files <- function(pkg_folder) {
     p_path <- path(path_common(all_files), pkg_folder)
     x <- as.character()
-    if (dir_exists(p_path)) x <- dir_ls(p_path, recurse = TRUE, type = "file")
+    if(pkg_folder == "man"){
+      if (dir_exists(p_path)) x <- dir_ls(p_path, recurse = TRUE, type = "file", glob = paste0("*.", reference_output))
+    } else {
+      if (dir_exists(p_path)) x <- dir_ls(p_path, recurse = TRUE, type = "file")
+    }
   }
   
   pf <- path()
@@ -203,7 +208,8 @@ package_file <- function(input,
                          base_folder = here::here(),
                          pkg = NULL,
                          reference_folder,
-                         r_reference_folder,
+                         build_parent_and_child_reference_pages = TRUE,  
+                         r_reference_folder = NULL,
                          vignettes_folder,
                          examples = FALSE,
                          template = NULL,
@@ -224,41 +230,78 @@ package_file <- function(input,
   
   input_split <- path_split(input_rel)[[1]]
   
-  output_split <- input_split
-  r_ref <- paste0(reference_folder, "/", r_reference_folder)
-  if (input_split[[1]] == "man") output_split[[1]] <- r_ref
-  if (input_split[[1]] == "vignettes") output_split[[1]] <- vignettes_folder
-  li <- length(input_split)
-  if (input_split[li] == "readme.md") output_split[li] <- "index.md"
-  output_file <- path(
-    base_folder,
-    paste0(r_ref, collapse = "/")
-  )
-  output_parent_file <- path(
-    base_folder,
-    paste0(output_split, collapse = "/")
-  )
-  output_folder <- path_dir(output_file)
-  if (!dir_exists(output_folder)) dir_create(output_folder)
-  if (tolower(path_ext(input)) == "rd") {
+  if(isTRUE(build_parent_and_child_reference_pages)){
     
-    out <- reference_to_qmd(input_name[[1]], pkg, template)
-    out_parent <- reference_to_qmd(input_name[[1]], pkg, template_parent)
-    
-    output_file <- output_file %>% 
-      path_ext_remove() %>%  
-      path(ext = output)
-    
-    output_file_parent <- output_parent_file %>% 
-      path_ext_remove() %>%  
-      path(ext = out_parent)
-    
-    writeLines(out, output_file)
-    writeLines(out_parent, output_parent_file)
-  } else {
-    file_copy(input, output_file, overwrite = TRUE)
-    file_copy(input, output_parent_file, overwrite = TRUE)
+    output_parent_split <- input_split
+    if (input_split[[1]] == "man") output_parent_split[[1]] <- reference_folder
+    output_split <- input_split
+    if (input_split[[1]] == "man") output_split[[1]] <- reference_folder
+    if (input_split[[1]] == "vignettes") output_split[[1]] <- vignettes_folder
+    li <- length(input_split)
+    if (input_split[li] == "readme.md") output_split[li] <- "index.md"
+    output_file_parent <- path(
+      base_folder,
+      paste0(output_parent_split, collapse = "/")
+    )
+    output_file <- path(
+      base_folder,
+      paste0(output_split, collapse = "/")
+    )
+    output_folder <- path_dir(output_file)
+    output_folder_parent <- path_dir(output_file_parent)
+    if (!dir_exists(output_folder_parent)) dir_create(output_folder_parent)
+    if (!dir_exists(output_folder)) dir_create(output_folder)
+    if (tolower(path_ext(input)) == "rd") {
+      
+      out_parent <- reference_to_qmd(input_name[[1]], pkg, template_parent)
+      
+      output_file_parent <- output_file_parent %>% 
+        path_ext_remove() %>%  
+        path(ext = 'qmd') #parent file extensions always need to be .qmd because they have tabsets (which .md files don't support)
+      
+      writeLines(out_parent, output_file_parent)
+      
+      
+      out <- reference_to_qmd(input_name[[1]], pkg, template)
+      
+      output_file <- output_file %>% 
+        path_ext_remove() %>%  
+        path(ext = output)
+      
+      writeLines(out, output_file)
+      
+    } else {
+      file_copy(input, output_file_parent, overwrite = TRUE)
+      file_copy(input, output_file, overwrite = TRUE)
+    }
+  } 
+  
+  if(isFALSE(build_parent_and_child_reference_pages) || is.null(build_parent_and_child_reference_pages)){
+    output_split <- input_split
+    if (input_split[[1]] == "man") output_split[[1]] <- reference_folder
+    if (input_split[[1]] == "vignettes") output_split[[1]] <- vignettes_folder
+    li <- length(input_split)
+    if (input_split[li] == "readme.md") output_split[li] <- "index.md"
+    output_file <- path(
+      base_folder,
+      paste0(output_split, collapse = "/")
+    )
+    output_folder <- path_dir(output_file)
+    if (!dir_exists(output_folder)) dir_create(output_folder)
+    if (tolower(path_ext(input)) == "rd") {
+      
+      out <- reference_to_qmd(input_name[[1]], pkg, template)
+      
+      output_file <- output_file %>% 
+        path_ext_remove() %>%  
+        path(ext = output)
+      
+      writeLines(out, output_file)
+    } else {
+      file_copy(input, output_file, overwrite = TRUE)
+    }
   }
+  
+  # print the output for the child documents
   path_file(output_file)
-  path_file(output_parent_file)
 }

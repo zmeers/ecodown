@@ -109,7 +109,7 @@ ecodown_convert <- function(package_source_folder = here::here(),
   
   all_files <- dir_ls(package_source_folder, recurse = TRUE, type = "file")
   
-  msg_color_title("Copying/Converting to Quarto")
+  msg_color_title("Copying/Converting R Files to Quarto")
   
   pkg <- as_pkgdown(package_source_folder)
   
@@ -119,7 +119,7 @@ ecodown_convert <- function(package_source_folder = here::here(),
     nchar(all_files)
   )
   
-  if(clone_header()) msg_summary_title("Copying/Converting to Quarto")
+  if(clone_header()) msg_summary_title("Copying/Converting R Files to Quarto")
   msg_summary_header()
   msg_summary_entry("|")
   

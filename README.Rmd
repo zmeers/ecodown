@@ -31,8 +31,7 @@ cat_tree <- function(x, ...) {
 [![CRAN status](https://www.r-pkg.org/badges/version/ecodown)](https://CRAN.R-project.org/package=ecodown)
 <!-- badges: end -->
 
-This package is intended for internal RStudio use. 
-
+This is a fork of `ecodown`, a package intended for internal RStudio use. The fork introduces some new features--mainly to integrate the package with an experimental package I'm writing:`pyrdocs`, an R package to generate R and Python documentation for Quarto sites. 
 
 
 

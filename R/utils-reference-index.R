@@ -16,7 +16,7 @@ reference_index <- function(pkg = NULL, quarto_sub_folder = "", version_folder =
     } else {
       c(" ", paste("##", .y), " ", .x)  
     }
-    })
+  })
   
   res <- reduce(res, c)
   
@@ -27,7 +27,7 @@ reference_index <- function(pkg = NULL, quarto_sub_folder = "", version_folder =
              paste0("description: ", package_description),
              "---", 
              res
-             )
+    )
   }
   
   res
@@ -55,6 +55,7 @@ reference_index_convert <- function(index_list, dir_out = "") {
   map(out, ~ c(header, map_chr(.x, ~ paste0("|", .x[[1]], "|", .x[[2]], "|")) ))
 }
 
+
 reference_to_list_index <- function(pkg) {
   if(is.character(pkg)) pkg <- as_pkgdown(pkg)
   pkg_ref <- pkg$meta$reference
@@ -79,7 +80,7 @@ reference_to_list_index <- function(pkg) {
           try(
             item_numbers <- eval(parse(text = paste0("`", .x,"`")), topics_env), 
             silent = TRUE
-            )
+          )
           if(is.null(item_numbers)) {
             item_numbers <- eval(parse(text = .x), topics_env)
           }
@@ -91,8 +92,6 @@ reference_to_list_index <- function(pkg) {
     })
   
   if(!is.null(pkg_ref)) {
-    #sections_title <- map(pkg_ref, ~c(.x$title, .x$subtitle))
-    # sections_title <- map(pkg_ref, ~c(.x$title))
     sections_title <- map(pkg_ref, ~c(.x$title, .x$subtitle))
     names(sections_list) <- sections_title
   }

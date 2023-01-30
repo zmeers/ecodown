@@ -61,14 +61,12 @@ file_tree <- function(file_list,
     section_time <- cat_time(section_start, section_end)
     if (verbosity == "summary") cat(paste0(section_time, "\n"))
   }
-  if(command_name %in% c("downlit_single", "package_file", "render_quarto")){
-    sep_cat <- paste0(rep("=", times = 46), collapse = "")
-    cat(silver(sep_cat, "\n"))
-    
-    tree_time <- cat_time(tree_start, Sys.time(), add_brackets = FALSE)
-    
-    cat(silver("Total files: ", length(file_list), " ---- Total time: ", tree_time, "\n"))
-  }
+  sep_cat <- paste0(rep("=", times = 46), collapse = "")
+  cat(silver(sep_cat, "\n"))
+  
+  tree_time <- cat_time(tree_start, Sys.time(), add_brackets = FALSE)
+  
+  cat(silver("Total files: ", length(file_list), " ---- Total time: ", tree_time, "\n"))
 }
 
 cat_time <- function(start_time = Sys.time() - 600,
@@ -96,7 +94,7 @@ exec_command <- function(command_name = "",
   } else {
     x <- TRUE
   }
-
+  
   if (x) {
     entries <- c(entry_value, addl_entries)
     out <- exec(command_name, !!!entries)

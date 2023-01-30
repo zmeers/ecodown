@@ -140,11 +140,7 @@ ecodown_convert <- function(package_source_folder = here::here(),
   get_files <- function(pkg_folder) {
     p_path <- path(path_common(all_files), pkg_folder)
     x <- as.character()
-    if(pkg_folder == "man"){
-      if (dir_exists(p_path)) x <- dir_ls(p_path, recurse = TRUE, type = "file", glob = paste0("*.", reference_output))
-    } else {
-      if (dir_exists(p_path)) x <- dir_ls(p_path, recurse = TRUE, type = "file")
-    }
+    if (dir_exists(p_path)) x <- dir_ls(p_path, recurse = TRUE, type = "file")
   }
   
   pf <- path()

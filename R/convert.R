@@ -70,7 +70,7 @@ ecodown_convert <- function(package_source_folder = here::here(),
                             commit = c("latest_tag", "latest_commit"),
                             branch = "main",
                             package_description = NULL,
-                            build_parent_and_child_reference_pages = TRUE,   
+                            build_parent_and_child_reference_pages = TRUE,
                             reference_template = NULL,
                             reference_template_child = NULL,
                             reference_template_parent = NULL,
@@ -206,7 +206,7 @@ package_file <- function(input,
                          base_folder = here::here(),
                          pkg = NULL,
                          reference_folder,
-                         build_parent_and_child_reference_pages = TRUE,  
+                         build_parent_and_child_reference_pages = TRUE,
                          r_reference_folder = NULL,
                          vignettes_folder,
                          examples = FALSE,
@@ -258,8 +258,7 @@ package_file <- function(input,
         path(ext = 'qmd') #parent file extensions always need to be .qmd because they have tabsets (which .md files don't support)
       
       writeLines(out_parent, output_file_parent)
-      
-      
+  
       out <- reference_to_qmd(input_name[[1]], pkg, template)
       
       output_file <- output_file %>% 

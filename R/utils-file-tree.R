@@ -4,15 +4,23 @@ file_tree <- function(file_list,
                       command_name = "",
                       entry_value = NULL,
                       addl_entries = list(),
-                      verbosity = "summary") {
+                      verbosity = "verbose") {
   tree_start <- Sys.time()
   file_unique <- unique(path_dir(file_list))
   file_sort <- sort(file_unique)
-  rel_sort <- substr(
-    file_sort,
-    nchar(path_dir(base_folder)) + 2,
-    nchar(file_sort)
-  )
+  if(command_name == "generate_python_md_modules"){
+    rel_sort <-substr(
+      file_sort,
+      nchar(path(base_folder)) + 2,
+      nchar(file_sort)
+    )
+  } else {
+    rel_sort <-substr(
+      file_sort,
+      nchar(path_dir(base_folder)),
+      nchar(file_sort)
+    )  
+  }
   for (i in seq_along(rel_sort)) {
     matched_files <- path_dir(file_list) == file_sort[i]
     no_files <- sum(matched_files)

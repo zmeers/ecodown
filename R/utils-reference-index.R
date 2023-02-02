@@ -11,10 +11,14 @@ reference_index <- function(pkg = NULL, quarto_sub_folder = "", version_folder =
   ref_convert <- reference_index_convert(ref_list, dir_out)
   
   res <- purrr::imap(ref_convert, ~ {
-    if(.y == 1) {
+    if(.y == 1 || .y == "NULL") {
       .x
     } else {
-      c(" ", paste("##", .y), " ", .x)  
+      if(length(.x)>2){
+        c(" ", paste("##", .y), " ", .x) 
+      } else {
+        c(" ", paste("##", .y), " ") 
+      }
     }
   })
   
@@ -44,14 +48,14 @@ reference_index_convert <- function(index_list, dir_out = "") {
     funcs <- gsub("&gt;", ">", funcs)
     funcs <- paste0(funcs, collapse = " ")
     
-    file_out <- path(dir_out, .x$file_out)
+    
     desc <- .x$title
     c(
-      paste0("[", funcs, "](", file_out,")"),
+      paste0("[", funcs, "](", .x$file_out,")"),
       desc
     )
   }))
-  header <- c("Function(s) | Description", "|---|---|")
+  header <- c("Function | Description", "|---|---|")
   map(out, ~ c(header, map_chr(.x, ~ paste0("|", .x[[1]], "|", .x[[2]], "|")) ))
 }
 

@@ -3,9 +3,9 @@ Title: Publish package documents in Quarto
 Version: 0.0.0.91
 Authors@R: 
     person(
-    given = "Edgar", 
-    family = "Ruiz", 
-    email = "edgararuiz@gmail.com", 
+    given = "Zoe", 
+    family = "Meers", 
+    email = "zoe.meers@gmail.com", 
     role = c("aut", "cre")
     )
 Description: Automates refreshing package documentation in a website. 
@@ -17,6 +17,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 Imports:
     rstudioapi,
+    pyrdocs,
     magrittr,
     pkgdown,
     downlit,
@@ -34,5 +35,7 @@ Suggests:
     covr,
     testthat (>= 3.0.0),
     rmarkdown
+Remotes:  
+    zmeers/pyrdocs
 Config/testthat/edition: 3
 VignetteBuilder: knitr

@@ -17,7 +17,6 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 Imports:
     rstudioapi,
-    pyrdocs,
     magrittr,
     pkgdown,
     downlit,
@@ -35,7 +34,5 @@ Suggests:
     covr,
     testthat (>= 3.0.0),
     rmarkdown
-Remotes:  
-    zmeers/pyrdocs
 Config/testthat/edition: 3
 VignetteBuilder: knitr

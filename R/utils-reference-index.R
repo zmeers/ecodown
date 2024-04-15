@@ -43,10 +43,11 @@ reference_index_convert <- function(index_list, dir_out = "") {
     # Manual fixes of special characters in funs variable
     
     funcs <- .x$funs
+    funcs <- paste0(funcs, collapse = " ")
     if(length(funcs) == 0) funcs <- .x$alias
+    if(length(funcs) > 1) funcs <- sub(" .*", "", funcs)
     funcs <- gsub("&lt;", "<", funcs)
     funcs <- gsub("&gt;", ">", funcs)
-    funcs <- paste0(funcs, collapse = " ")
     
     
     desc <- .x$title

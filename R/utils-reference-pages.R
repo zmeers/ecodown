@@ -62,7 +62,7 @@ parse_line_tag <- function(line, con) {
       if(any(pm$no_lines > 1)) {
         tag_content <- reduce(pm$content, c)
       } else {
-        tag_content <- paste0(pm$content, collapse = "___")
+        tag_content <- paste0(pm$content, collapse = "")
       }
       
       yes_notitle <- any(as.logical(pm$no_title))

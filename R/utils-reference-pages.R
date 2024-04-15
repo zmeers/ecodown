@@ -113,7 +113,7 @@ reference_content_default <- function(file_in,
   
   out <- c(
     alias, 
-    reference_entry(con$title[1]),
+    reference_entry(con$title[[1]]),
     reference_entry(con$description, "Description"),
     reference_entry(con$format, "Format"),
     reference_entry(con$usage, "Usage"),

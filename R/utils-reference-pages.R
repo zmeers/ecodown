@@ -60,9 +60,9 @@ parse_line_tag <- function(line, con) {
       tag_content <- NULL
     } else {
       if(any(pm$no_lines > 1)) {
-        tag_content <- pm$content[[1]]
+        tag_content <- reduce(pm$content, c)
       } else {
-        tag_content <- pm$content[[1]]
+        tag_content <- paste0(pm$content, collapse = "___")
       }
       
       yes_notitle <- any(as.logical(pm$no_title))
@@ -113,7 +113,7 @@ reference_content_default <- function(file_in,
   
   out <- c(
     alias, 
-    reference_entry(con$title[[1]]),
+    reference_entry(con$title),
     reference_entry(con$description, "Description"),
     reference_entry(con$format, "Format"),
     reference_entry(con$usage, "Usage"),

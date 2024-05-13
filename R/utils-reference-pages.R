@@ -214,7 +214,7 @@ reference_arguments <- function(x) {
 
 
 reference_qmd_example <- function(x, run = FALSE) {
-  #x <- x[x != "\n"]
+  x <- x[x != " "]
   if(run) {
     out <- c("```{r}",  x, "```")
   } else {

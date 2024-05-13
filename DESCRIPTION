@@ -1,6 +1,6 @@
 Package: ecodown
 Title: Publish package documents in Quarto
-Version: 0.0.0.93
+Version: 0.0.0.95
 Authors@R: 
     person(
     given = "Zoe", 
